@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     # My apps 
     'accounts.apps.AccountsConfig',
+    'pages.apps.PagesConfig',
 ]
 
 SITE_ID = 1
