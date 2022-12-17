@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from environs import Env
+import os
 
 env = Env()
 env.read_env()
@@ -131,14 +132,27 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# locale
 
-TIME_ZONE = 'UTC'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa'
 
-USE_I18N = True
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
 
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
+
+USE_I18N = True     # Internationalization
+USE_L10N = True     # Localization
 USE_TZ = True
 
+PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
+LOCALE_PATHS = (
+    os.path.join(PROJECT_PATH, "locale"),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

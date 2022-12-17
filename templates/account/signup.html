@@ -1,0 +1,23 @@
+{% extends '_base.html' %}
+
+<!-- Third party tags -->
+{% load crispy_forms_tags %}
+
+<!-- Django tags -->
+{% load i18n %}
+
+{% block title %}
+
+    {% trans 'signup' %}
+
+{% endblock %}
+
+{% block body %}
+
+    <form method="POST" action="{% url 'account_signup'%}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-success" value="{% trans 'signup' %}">
+    </form>
+
+{% endblock %}
