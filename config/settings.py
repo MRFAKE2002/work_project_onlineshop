@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Third party apps
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
 
     # My apps 
     'accounts.apps.AccountsConfig',
@@ -169,4 +170,35 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+# for send a confirmation to console
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# # for send a confirmation from our email to user email
+
+# EMAIL_PACKED = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = "smtp.gmail.com"
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = "mr3fake@gmail.com"
+# EMAIL_HOST_PASSWORD = "roozbehbadali1381"
+
+# crispy forms for config
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# allauth config  
+
+ACCOUNT_SESSION_REMEMBER = True  
+
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_USERNAME_REQUIRED = False
+
+ACCOUNT_EMAIL_REQUIRED = True
+
+ACCOUNT_UNIQUE_EMAIL = True
 
