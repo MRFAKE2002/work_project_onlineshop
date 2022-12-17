@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -13,6 +15,25 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+
+        <ul class="user-info-menu">
+            {% if user.is_authenticated %}
+            <li>
+                <a class="text-right" href="{% url 'account_logout' %}">{% trans 'LOGOUT' %}<a>
+            </li>
+            <li>
+                <a class="text-right" href="#">{% trans 'PROFILE' %}</a>
+            </li>
+            {% else %}
+            <li>
+                <a class="text-right" href="{% url 'account_login' %}">{% trans 'LOGIN' %}</a>
+            </li>
+            <li>
+                <a class="text-right" href="{% url 'account_signup' %}">{% trans 'SIGNUP' %}</a>
+            </li>
+            {% endif %}
+        </ul>
+
         {% block body %}{% endblock %}
 
         <!--[if lt IE 7]>

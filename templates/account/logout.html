@@ -11,10 +11,12 @@
 
 {% block body %}
 
-    <form method="POST" action="{% url 'account_logout'%}">
-        <h3>{% trans 'Are you sure?'%}</h3>
-        <p>{% trans 'Do you want to log out?'%}</p>
-        <input type="submit" class="btn btn-danger" value="{% trans 'logout' %}">
+    <h3>{% trans 'Are you sure?'%}</h3>
+    <p>{% trans 'Do you want to log out?'%}</p>
+    <form class="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="logout" />
     </form>
+
 
 {% endblock %}
