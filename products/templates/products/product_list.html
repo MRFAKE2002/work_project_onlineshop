@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+<!-- Django tags -->
+{% load i18n %}
+
+{% block title %}
+
+    {% trans "Product List" %}
+
+{% endblock %}
+
+{% block body %}
+
+    {% for product in products %}
+        <h2> {{ product.name }} </h2>
+        <br>
+        <h3> {{ product.price }} </h3>
+    {% endfor %}
+
+{% endblock %} 
