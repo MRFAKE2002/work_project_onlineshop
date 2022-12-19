@@ -26,6 +26,6 @@ urlpatterns = [
     path('products/', include('products.urls')),
     
     # Rosetta
-    # path('rosetta/', include('rosetta.urls')),
+    path('rosetta/', include('rosetta.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
