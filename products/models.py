@@ -1,4 +1,4 @@
-from audioop import reverse
+from django.shortcuts import reverse
 from django.db import models
 
 from django.utils.translation import gettext_lazy as _
@@ -19,5 +19,6 @@ class Product(models.Model):
     def __str__(self):
         return f'product name:{self.name} product is_active : {self.is_active}'
     
-    # def get_absolute_url(self):
-    #     return reverse('product_details', args=[self.product_id])
+    def get_absolute_url(self):
+        return reverse('product_details', args=[self.pk])
+    
