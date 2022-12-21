@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
 from django.db import models
 
@@ -21,4 +22,26 @@ class Product(models.Model):
     
     def get_absolute_url(self):
         return reverse('product_details', args=[self.pk])
+    
+class Comment(models.Model):
+    STARS_CHOICES=[
+        ('1', _('awful')),
+        ('2', _('bad')),
+        ('3', _('normal')),
+        ('4', _('good')),
+        ('5', _('perfect')),
+    ]
+    
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_('user'), related_name='comments')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('product'), related_name='comments')
+    
+    text = models.TextField(_('text'))
+    stars = models.CharField(choices=STARS_CHOICES, max_length=10, verbose_name=_('stars'),)
+
+    def __str__(self):
+        return self.product
+    
+    def get_absolute_url(self):
+        return reverse('product_details', args=(self.pk))
+
     
