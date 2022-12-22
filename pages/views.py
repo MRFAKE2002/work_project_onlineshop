@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views import generic
 
-class HomePageView(TemplateView):
+from products.models import Product
+
+class HomePageView(generic.ListView):
     template_name = 'home.html'
-    
-    
+    model = Product 
+    context_object_name = 'products'
+

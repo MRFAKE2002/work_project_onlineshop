@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('pages.urls')),
-    path('products/', include('products.urls')),
+    path('products/', include('products.urls', namespace='product')),
     
     # Rosetta
     path('rosetta/', include('rosetta.urls')),

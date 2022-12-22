@@ -21,7 +21,7 @@ class Product(models.Model):
         return f'product name:{self.name} product is_active : {self.is_active}'
     
     def get_absolute_url(self):
-        return reverse('product_details', args=[self.pk])
+        return reverse('product:product_details', args=[self.pk])
     
 class Comment(models.Model):
     STARS_CHOICES=[
@@ -42,6 +42,6 @@ class Comment(models.Model):
         return self.product
     
     def get_absolute_url(self):
-        return reverse('product_details', args=(self.pk))
+        return reverse('product:product_details', args=[self.product.id ])
 
     
