@@ -84,12 +84,12 @@
                                 </div>
                             </div>
                         {% else %}
-                            <a href="#" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{% trans "Profile" %}</a>
+                            <a href="{% url "profile" %}" class="btn btn-sm btn-light dropdown-toggle">{% trans "Profile" %}</a>
                         {% endif %}
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">EN</button>
+                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{% trans "EN"%}</button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">FR</button>
+                                <button class="dropdown-item" type="button">{% trans "FR"%}</button>
                             </div>
                         </div>
                         <a href="" class="btn px-0 ml-3">
