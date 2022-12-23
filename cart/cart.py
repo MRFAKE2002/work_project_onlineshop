@@ -1,5 +1,3 @@
-from django.shortcuts import get_object_or_404
-
 from products.models import Product
 
 class Cart:
@@ -33,9 +31,10 @@ class Cart:
         if product_id in self.cart:
             self.cart[product_id]['quantity'] += quantity
         else:
-            self.cart[product_id] = {'quantity': quantity}
+            self.cart[product_id] = {'quantity': 0}
 
         self.save()
+        
     def remove(self, product):
         """
         Remove specified product from cart.
@@ -53,7 +52,7 @@ class Cart:
         """
         self.session.modified = True
     
-    def __init__(self):
+    def __iter__(self):
         product_id = self.cart.keys()
         
         product_details = Product.objects.filter(id__in=product_id)
