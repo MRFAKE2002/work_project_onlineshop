@@ -5,19 +5,24 @@ from products.models import Product
 class Cart:
     def __init__(self, request):
         """
-        Initialize a cart if not existing.
+        Initializes the Cart.
         """
-        self.request = request
+        # We use this code to get the request that user come in Cart Pages  
+        self.request = request   
         
-        self.session = request.session
+        # We use this code to get the user's session
+        self.session = request.session  
         
-        cart = self.session.get('cart')
+        # We use this code to get all data(products) that are in user's cart
+        cart = self.session.get('cart')  
         
+        # We use this code to make a empty cart for user
         if not cart:
-            cart = self.session['cart'] = {}
-        
+            cart = self.session['cart'] = {} 
+            # cart = self.session['cart']
+            
         self.cart = cart
-        
+      
     def add(self, product, quantity=1):
         """
         Add specified product to cart.
