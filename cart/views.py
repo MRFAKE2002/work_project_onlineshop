@@ -27,3 +27,25 @@ def add_product_to_cart(request, product_id):
         cart.add(product, quantity)
         
     return redirect("cart:cart_details_page")
+
+def remove_product_from_cart_view(request, product_id):
+    """
+    We use this function for remove the product from the cart by GET request in cart_detail page
+    """
+    cart = Cart(request)
+    
+    product = get_object_or_404(Product, id=product_id)
+    
+    cart.remove(product)
+    
+    return redirect('cart:cart_detail')
+
+def clear_cart_view(request):
+    """
+    We use this function to clear the cart by form in cart_detail page
+    """
+    cart = Cart(request)
+    
+    cart.clear()
+
+    return redirect('cart:cart_detail')
