@@ -180,7 +180,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                         <div class="product-item bg-light mb-4">
                             <div class="product-img position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
+                                <img class="img-fluid w-100" src="{{ product.image.url }}" alt="">
                                 <div class="product-action">
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                     <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -191,16 +191,16 @@
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-truncate" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                    <h5>{% trans "$" %}{{ product.price}}</h5>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-center mb-1">
+                                {% comment %} <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small class="fa fa-star text-primary mr-1"></small>
                                     <small>(99)</small>
-                                </div>
+                                </div> {% endcomment %}
                             </div>
                         </div>
                     </div>
@@ -208,11 +208,15 @@
                 <div class="col-12">
                     <nav>
                         <ul class="pagination justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" href="#">{% trans "Previous"%}</span></a></li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">{% trans "Next"%}</a></li>
+                            {% if page_obj.has_previous %}
+                                <li class="page-item disabled"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans "Previous"%}</span></a></li>
+                            {% endif %}
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            {% if page_obj.has_next %}
+                                <li class="page-item"><a class="page-link" href="{{ page_obj.next_page_number }}">2</a></li>
+                                <li class="page-item"><a class="page-link" href="{{ page_obj.next_page_number }}">3</a></li>
+                                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans "Next"%}</a></li>
+                            {% endif %}
                         </ul>
                     </nav>
                 </div>

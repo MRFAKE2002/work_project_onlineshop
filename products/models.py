@@ -18,7 +18,7 @@ class Product(models.Model):
     is_active = models.BooleanField(_('is_active'), default=True)
 
     def __str__(self):
-        return f'product name:{self.name} product is_active : {self.is_active}'
+        return self.name
     
     def get_absolute_url(self):
         return reverse('product:product_details', args=[self.pk])
