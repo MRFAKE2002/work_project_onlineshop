@@ -38,7 +38,7 @@ def remove_product_from_cart_view(request, product_id):
     
     cart.remove(product)
     
-    return redirect('cart:cart_detail')
+    return redirect('cart:cart_details_page')
 
 def clear_cart_view(request):
     """
@@ -48,4 +48,4 @@ def clear_cart_view(request):
     
     cart.clear()
 
-    return redirect('cart:cart_detail')
+    return redirect('cart:cart_details_page')
