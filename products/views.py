@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 from .forms import CommentForm
 from .models import Product, Comment
@@ -48,6 +50,8 @@ class CommentCreateView(generic.CreateView):
         user_comment.product = product
         
         user_comment.save()
+        
+        messages.success(self.request, _('Comment created successfully.'))
         
         return super().form_valid(form)
     

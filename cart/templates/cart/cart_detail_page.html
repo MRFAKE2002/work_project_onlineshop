@@ -74,6 +74,14 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                <div class="row no-gutters border-top pt--20 mt--20">
+                    <form method='POST' action="{% url 'cart:clear_cart' %}">
+                        {% csrf_token %}
+                        <div class="col-sm-6 text-sm-right">
+                            <button type="submit" class="cart-form__btn">{% trans 'Clear cart' %}</button>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="col-lg-4">
                 <form class="mb-30" action="">
