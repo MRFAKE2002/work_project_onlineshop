@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import reverse
 from django.db import models
-
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
@@ -37,7 +37,12 @@ class Comment(models.Model):
     
     text = models.TextField(_('text'))
     stars = models.CharField(choices=STARS_CHOICES, max_length=10, verbose_name=_('stars'),)
-
+    
+    datetime_created = models.DateTimeField(_('Date time created'), default=timezone.now)
+    datetime_modified = models.DateTimeField(auto_now=True)
+        
+    active = models.BooleanField(default=True)
+  
     def __str__(self):
         return self.product
     
