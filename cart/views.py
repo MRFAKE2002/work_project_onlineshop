@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.http import require_POST
 
 from .cart import Cart
 from .forms import AddProductToCartForm
@@ -10,8 +11,15 @@ def cart_details_page_view(request):
     """
     cart = Cart(request)
     
+    for product in cart:
+        product['product_inplace_current_quantity'] = AddProductToCartForm(initial={
+            'quantity' : product['quantity'],
+            'inplace' : True
+        })
+    
     return render(request, 'cart/cart_detail_page.html', {'cart' : cart})
 
+@require_POST
 def add_product_to_cart(request, product_id):
     cart = Cart(request)
     
@@ -24,10 +32,13 @@ def add_product_to_cart(request, product_id):
         
         quantity = int(cleaned_data['quantity'])
         
-        cart.add(product, quantity)
+        replace_current_price = cleaned_data['inplace']
+        
+        cart.add(product, quantity, replace_current_price)
         
     return redirect("cart:cart_details_page")
 
+@require_POST
 def remove_product_from_cart_view(request, product_id):
     """
     We use this function for remove the product from the cart by GET request in cart_detail page

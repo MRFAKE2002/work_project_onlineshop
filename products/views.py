@@ -4,6 +4,7 @@ from django.views import generic
 from .forms import CommentForm
 from .models import Product, Comment
 from cart.forms import AddProductToCartForm
+from cart.cart import Cart
 
 class ProductListView(generic.ListView):
     # model = Product
@@ -23,6 +24,9 @@ class ProductDetailsView(generic.DetailView):
         context['comment_form'] = CommentForm()
         # # We use this code to add ProductAddToCartForm in the context and use it in our product_detail        
         context['add_cart_form'] = AddProductToCartForm()
+        
+        # context['cart'] = Cart()
+        
         return context
 
 

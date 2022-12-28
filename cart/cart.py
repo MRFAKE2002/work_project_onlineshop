@@ -1,4 +1,6 @@
 from products.models import Product
+from django.utils.translation import gettext as _
+from django.contrib import messages
 
 class Cart:
     def __init__(self, request):
@@ -21,17 +23,22 @@ class Cart:
             
         self.cart = cart
       
-    def add(self, product, quantity=1):
+    def add(self, product, quantity=1, replace_current_price=True):
         """
         Add specified product to cart.
         """
         
         product_id = str(product.id)
                 
-        if product_id in self.cart:
-            self.cart[product_id]['quantity'] += quantity
-        else:
+        if product_id not in self.cart:
             self.cart[product_id] = {'quantity': 0}
+            
+        if replace_current_price:
+            self.cart[product_id]['quantity'] = quantity
+        else:
+            self.cart[product_id]['quantity'] += quantity
+
+        messages.success(self.request, _('Product successfully added to cart'))
 
         self.save()
         
@@ -44,6 +51,8 @@ class Cart:
         if product_id in self.cart:
             del self.cart[product_id]
             
+        messages.warning(self.request, _('Product removed from the cart'))
+        
         self.save()
         
     def save(self):
@@ -63,6 +72,7 @@ class Cart:
             cart[str(product.id)]['product_info'] = product
         
         for items in cart.values():
+            items['total'] = items['product_info'].price * items['quantity']
             yield items
     
     def __len__(self):
@@ -70,13 +80,11 @@ class Cart:
         
     def clear(self):
         del self.session['cart']
+        
+        messages.error(self.request, _('The cart has cleared.'))
 
         self.save()    
     
     def get_total_price(self):
         
-        product_id = self.cart.keys()
-        
-        product_details = Product.objects.filter(id__in=product_id)
-        
-        return sum(product_info.price for product_info in product_details)
+        return sum(items['product_info'].price * items['quantity'] for items in self.cart.values())
