@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-28 19:50+0330\n"
+"PO-Revision-Date: 2022-12-28 20:08+0330\n"
+"Last-Translator:   <roozbehsarcheshme@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\products\models.py:9
+msgid "product name"
+msgstr "نام محصول"
+
+#: .\products\models.py:10
+msgid "product description"
+msgstr "توضیحات محصول"
+
+#: .\products\models.py:11
+msgid "product price"
+msgstr "قیمت کالا"
+
+#: .\products\models.py:13
+msgid "product image"
+msgstr "تصویر محصول"
+
+#: .\products\models.py:15
+msgid "datetime_created"
+msgstr "زمان ایجاد شده"
+
+#: .\products\models.py:16
+msgid "datetime_modified"
+msgstr "زمان اصلاح شده"
+
+#: .\products\models.py:18
+msgid "is_active"
+msgstr "فعال "
+
+#: .\products\models.py:28
+msgid "awful"
+msgstr "خیلی بد"
+
+#: .\products\models.py:29
+msgid "bad"
+msgstr "بد"
+
+#: .\products\models.py:30
+msgid "normal"
+msgstr "معمولی"
+
+#: .\products\models.py:31
+msgid "good"
+msgstr "خوب"
+
+#: .\products\models.py:32
+msgid "perfect"
+msgstr "عالی "
+
+#: .\products\models.py:35
+msgid "user"
+msgstr "کاربر"
+
+#: .\products\models.py:36
+msgid "product"
+msgstr "محصول"
+
+#: .\products\models.py:38
+msgid "text"
+msgstr "متن"
+
+#: .\products\models.py:39
+msgid "stars"
+msgstr "ستاره ها"
+
+#: .\products\templates\products\product_details.html:11
+msgid "Product Details"
+msgstr "جزئیات محصول"
+
+#: .\products\templates\products\product_details.html:22
+#: .\products\templates\products\product_list.html:19
+msgid "Home"
+msgstr "صفحه اصلی"
+
+#: .\products\templates\products\product_details.html:23
+#: .\products\templates\products\product_list.html:20
+msgid "Shop List"
+msgstr "لیست فروشگاه"
+
+#: .\products\templates\products\product_details.html:24
+msgid "Shop Detail"
+msgstr "جزئیات فروشگاه"
+
+#: .\products\templates\products\product_details.html:62
+#: .\products\templates\products\product_details.html:178
+msgid "Reviews"
+msgstr "بررسی ها"
+
+#: .\products\templates\products\product_details.html:64
+#: .\products\templates\products\product_list.html:194
+msgid "$"
+msgstr "تومان"
+
+#: .\products\templates\products\product_details.html:66
+msgid "Sizes:"
+msgstr "اندازه ها:"
+
+#: .\products\templates\products\product_details.html:91
+msgid "Colors:"
+msgstr "رنگ ها:"
+
+#: .\products\templates\products\product_details.html:95
+msgid "Black"
+msgstr "مشکی"
+
+#: .\products\templates\products\product_details.html:99
+msgid "White"
+msgstr "سفید"
+
+#: .\products\templates\products\product_details.html:103
+msgid "Red"
+msgstr "قرمز"
+
+#: .\products\templates\products\product_details.html:107
+msgid "Blue"
+msgstr "آبی"
+
+#: .\products\templates\products\product_details.html:111
+msgid "Green"
+msgstr "سبز"
+
+#: .\products\templates\products\product_details.html:132
+msgid "Add To Cart"
+msgstr "افزودن به سبد خرید"
+
+#: .\products\templates\products\product_details.html:153
+msgid "Share on:"
+msgstr "اشتراک گذاری در:"
+
+#: .\products\templates\products\product_details.html:176
+msgid "Description"
+msgstr "شرح"
+
+#: .\products\templates\products\product_details.html:177
+msgid "Information"
+msgstr "اطلاعات"
+
+#: .\products\templates\products\product_details.html:182
+msgid "Product Description"
+msgstr "توضیحات محصول"
+
+#: .\products\templates\products\product_details.html:188
+msgid "Additional Information"
+msgstr "اطلاعات تکمیلی"
+
+#: .\products\templates\products\product_details.html:229
+msgid "Leave a review"
+msgstr "نظر بدهید"
+
+#: .\products\templates\products\product_details.html:259
+msgid "To write a comment please Login"
+msgstr "برای نوشتن نظر لطفا وارد شوید"
+
+#: .\products\templates\products\product_details.html:260
+msgid "Login"
+msgstr "ورود"
+
+#: .\products\templates\products\product_details.html:266
+msgid "review for"
+msgstr "بررسی برای"
+
+#: .\products\templates\products\product_details.html:286
+msgid "There is no comment for this product."
+msgstr "هیچ نظری برای این محصول وجود ندارد."
+
+#: .\products\templates\products\product_list.html:8
+msgid "Product List"
+msgstr "لیست محصولات"
+
+#: .\products\templates\products\product_list.html:34
+msgid "Filter by price"
+msgstr "فیلتر بر اساس قیمت"
+
+#: .\products\templates\products\product_list.html:72
+msgid "Filter by color"
+msgstr "فیلتر بر اساس رنگ"
+
+#: .\products\templates\products\product_list.html:110
+msgid "Filter by size"
+msgstr "بر اساس اندازه فیلتر کنید"
+
+#: .\products\templates\products\product_list.html:213
+msgid "Previous"
+msgstr "قبلی"
+
+#: .\products\templates\products\product_list.html:219
+msgid "Next"
+msgstr "بعد"
+
+#: .\products\views.py:54
+msgid "Comment created successfully."
+msgstr "نظر با موفقیت ایجاد شد."

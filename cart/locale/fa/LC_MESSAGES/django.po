@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-28 19:51+0330\n"
+"PO-Revision-Date: 2022-12-28 19:55+0330\n"
+"Last-Translator:   <roozbehsarcheshme@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\cart\cart.py:41
+msgid "Product successfully added to cart"
+msgstr "محصول با موفقیت به سبد خرید اضافه شد."
+
+#: .\cart\cart.py:54
+msgid "Product removed from the cart"
+msgstr "محصول از سبد خرید حذف شد."
+
+#: .\cart\cart.py:84
+msgid "The cart has cleared."
+msgstr "سبد خرید ترخیص شده است."
+
+#: .\cart\templates\cart\cart_detail_page.html:8
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\cart\templates\cart\cart_detail_page.html:19
+msgid "Home"
+msgstr "صفحه اصلی"
+
+#: .\cart\templates\cart\cart_detail_page.html:20
+msgid "Shop"
+msgstr "فروشگاه"
+
+#: .\cart\templates\cart\cart_detail_page.html:21
+msgid "Shopping Cart"
+msgstr "سبد خرید"
+
+#: .\cart\templates\cart\cart_detail_page.html:37
+msgid "Products"
+msgstr "محصولات"
+
+#: .\cart\templates\cart\cart_detail_page.html:38
+msgid "Price"
+msgstr "قیمت"
+
+#: .\cart\templates\cart\cart_detail_page.html:39
+msgid "Quantity"
+msgstr "تعداد"
+
+#: .\cart\templates\cart\cart_detail_page.html:40
+#: .\cart\templates\cart\cart_detail_page.html:112
+msgid "Total"
+msgstr "مجموع"
+
+#: .\cart\templates\cart\cart_detail_page.html:41
+msgid "Remove"
+msgstr "حذف"
+
+#: .\cart\templates\cart\cart_detail_page.html:48
+#: .\cart\templates\cart\cart_detail_page.html:68
+#: .\cart\templates\cart\cart_detail_page.html:113
+msgid "$"
+msgstr "تومان"
+
+#: .\cart\templates\cart\cart_detail_page.html:81
+msgid "Clear cart"
+msgstr "خالی کردن سبد خرید"
+
+#: .\cart\templates\cart\cart_detail_page.html:91
+msgid "Apply Coupon"
+msgstr "درخواست کوپن"
+
+#: .\cart\templates\cart\cart_detail_page.html:95
+msgid "Cart Summary"
+msgstr "خلاصه سبد خرید"
+
+#: .\cart\templates\cart\cart_detail_page.html:115
+msgid "Proceed To Checkout"
+msgstr "به پرداخت ادامه دهید"
+
+#: .\cart\templates\cart\cart_detail_page.html:121
+msgid " Cart is empty! Please add some products to the cart. "
+msgstr "سبد خالی است! لطفا چند محصول را به سبد خرید اضافه کنید."
+
+#: .\cart\templates\cart\cart_detail_page.html:123
+msgid " Go shopping "
+msgstr "رفتن فروشگاه"
