@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
+    'translate.apps.TranslateConfig',
 ]
 
 SITE_ID = 1
