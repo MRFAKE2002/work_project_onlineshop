@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'crispy_forms',
     'rosetta',
+    'ckeditor',
 
     # My apps 
     'accounts.apps.AccountsConfig',
