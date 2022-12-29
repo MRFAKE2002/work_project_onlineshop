@@ -12,7 +12,7 @@ class Product(models.Model):
     
     image = models.ImageField(_('product image'), upload_to='products/product_image/')
     
-    datetime_created = models.DateTimeField(_('datetime_created'), auto_now_add=True)
+    datetime_created = models.DateTimeField(_('datetime_created'), default=timezone.now())
     datetime_modified = models.DateTimeField(_('datetime_modified'), auto_now=True)
     
     is_active = models.BooleanField(_('is_active'), default=True)
@@ -44,7 +44,7 @@ class Comment(models.Model):
     active = models.BooleanField(default=True)
   
     def __str__(self):
-        return self.product
+        return str(self.product)
     
     def get_absolute_url(self):
         return reverse('product:product_details', args=[self.product.id ])
