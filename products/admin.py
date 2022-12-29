@@ -5,12 +5,12 @@ from jalali_date.admin import ModelAdminJalaliMixin
 
 class CommentProductInline(admin.TabularInline):
     model = Comment
-    fields = ['user', 'product', 'stars', 'active',]
+    fields = ['user', 'text', 'stars', 'active',]
     extra = 1
 
 @admin.register(Product)
 class ProductAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
-    list_display = ['name', 'price', 'is_active']
+    list_display = ['name', 'price','is_active']
     
     inlines = [
         CommentProductInline,
