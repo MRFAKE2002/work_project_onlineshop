@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-28 19:50+0330\n"
-"PO-Revision-Date: 2022-12-28 20:08+0330\n"
+"POT-Creation-Date: 2022-12-29 16:35+0330\n"
+"PO-Revision-Date: 2022-12-29 16:35+0330\n"
 "Last-Translator:   <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -83,127 +83,132 @@ msgstr "متن"
 msgid "stars"
 msgstr "ستاره ها"
 
-#: .\products\templates\products\product_details.html:11
+#: .\products\models.py:41
+#| msgid "datetime_created"
+msgid "Date time created"
+msgstr "زمان ایجاد شده"
+
+#: .\products\templates\products\product_details.html:15
 msgid "Product Details"
 msgstr "جزئیات محصول"
 
-#: .\products\templates\products\product_details.html:22
-#: .\products\templates\products\product_list.html:19
+#: .\products\templates\products\product_details.html:26
+#: .\products\templates\products\product_list.html:22
 msgid "Home"
 msgstr "صفحه اصلی"
 
-#: .\products\templates\products\product_details.html:23
-#: .\products\templates\products\product_list.html:20
+#: .\products\templates\products\product_details.html:27
+#: .\products\templates\products\product_list.html:23
 msgid "Shop List"
 msgstr "لیست فروشگاه"
 
-#: .\products\templates\products\product_details.html:24
+#: .\products\templates\products\product_details.html:28
 msgid "Shop Detail"
 msgstr "جزئیات فروشگاه"
 
-#: .\products\templates\products\product_details.html:62
-#: .\products\templates\products\product_details.html:178
+#: .\products\templates\products\product_details.html:66
+#: .\products\templates\products\product_details.html:182
 msgid "Reviews"
 msgstr "بررسی ها"
 
-#: .\products\templates\products\product_details.html:64
-#: .\products\templates\products\product_list.html:194
+#: .\products\templates\products\product_details.html:68
+#: .\products\templates\products\product_list.html:197
 msgid "$"
 msgstr "تومان"
 
-#: .\products\templates\products\product_details.html:66
+#: .\products\templates\products\product_details.html:70
 msgid "Sizes:"
 msgstr "اندازه ها:"
 
-#: .\products\templates\products\product_details.html:91
+#: .\products\templates\products\product_details.html:95
 msgid "Colors:"
 msgstr "رنگ ها:"
 
-#: .\products\templates\products\product_details.html:95
+#: .\products\templates\products\product_details.html:99
 msgid "Black"
 msgstr "مشکی"
 
-#: .\products\templates\products\product_details.html:99
+#: .\products\templates\products\product_details.html:103
 msgid "White"
 msgstr "سفید"
 
-#: .\products\templates\products\product_details.html:103
+#: .\products\templates\products\product_details.html:107
 msgid "Red"
 msgstr "قرمز"
 
-#: .\products\templates\products\product_details.html:107
+#: .\products\templates\products\product_details.html:111
 msgid "Blue"
 msgstr "آبی"
 
-#: .\products\templates\products\product_details.html:111
+#: .\products\templates\products\product_details.html:115
 msgid "Green"
 msgstr "سبز"
 
-#: .\products\templates\products\product_details.html:132
+#: .\products\templates\products\product_details.html:136
 msgid "Add To Cart"
 msgstr "افزودن به سبد خرید"
 
-#: .\products\templates\products\product_details.html:153
+#: .\products\templates\products\product_details.html:157
 msgid "Share on:"
 msgstr "اشتراک گذاری در:"
 
-#: .\products\templates\products\product_details.html:176
+#: .\products\templates\products\product_details.html:180
 msgid "Description"
 msgstr "شرح"
 
-#: .\products\templates\products\product_details.html:177
+#: .\products\templates\products\product_details.html:181
 msgid "Information"
 msgstr "اطلاعات"
 
-#: .\products\templates\products\product_details.html:182
+#: .\products\templates\products\product_details.html:186
 msgid "Product Description"
 msgstr "توضیحات محصول"
 
-#: .\products\templates\products\product_details.html:188
+#: .\products\templates\products\product_details.html:192
 msgid "Additional Information"
 msgstr "اطلاعات تکمیلی"
 
-#: .\products\templates\products\product_details.html:229
+#: .\products\templates\products\product_details.html:233
 msgid "Leave a review"
 msgstr "نظر بدهید"
 
-#: .\products\templates\products\product_details.html:259
+#: .\products\templates\products\product_details.html:263
 msgid "To write a comment please Login"
 msgstr "برای نوشتن نظر لطفا وارد شوید"
 
-#: .\products\templates\products\product_details.html:260
+#: .\products\templates\products\product_details.html:264
 msgid "Login"
 msgstr "ورود"
 
-#: .\products\templates\products\product_details.html:266
+#: .\products\templates\products\product_details.html:270
 msgid "review for"
 msgstr "بررسی برای"
 
-#: .\products\templates\products\product_details.html:286
+#: .\products\templates\products\product_details.html:291
 msgid "There is no comment for this product."
 msgstr "هیچ نظری برای این محصول وجود ندارد."
 
-#: .\products\templates\products\product_list.html:8
+#: .\products\templates\products\product_list.html:11
 msgid "Product List"
 msgstr "لیست محصولات"
 
-#: .\products\templates\products\product_list.html:34
+#: .\products\templates\products\product_list.html:37
 msgid "Filter by price"
 msgstr "فیلتر بر اساس قیمت"
 
-#: .\products\templates\products\product_list.html:72
+#: .\products\templates\products\product_list.html:75
 msgid "Filter by color"
 msgstr "فیلتر بر اساس رنگ"
 
-#: .\products\templates\products\product_list.html:110
+#: .\products\templates\products\product_list.html:113
 msgid "Filter by size"
 msgstr "بر اساس اندازه فیلتر کنید"
 
-#: .\products\templates\products\product_list.html:213
+#: .\products\templates\products\product_list.html:216
 msgid "Previous"
 msgstr "قبلی"
 
-#: .\products\templates\products\product_list.html:219
+#: .\products\templates\products\product_list.html:222
 msgid "Next"
 msgstr "بعد"
 

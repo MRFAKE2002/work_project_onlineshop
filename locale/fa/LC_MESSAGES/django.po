@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-28 19:51+0330\n"
+"POT-Creation-Date: 2022-12-29 16:35+0330\n"
 "PO-Revision-Date: 2022-12-28 20:01+0330\n"
 "Last-Translator:   <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,8 +30,8 @@ msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
 "address for user %(user_display)s."
 msgstr ""
-"لطفاً تأیید کنید که <a href=\"mailto:%(email)s\">%(email)s</a> یک آدرس ایمیل"
-" برای کاربر %(user_display)s است."
+"لطفاً تأیید کنید که <a href=\"mailto:%(email)s\">%(email)s</a> یک آدرس ایمیل "
+"برای کاربر %(user_display)s است."
 
 #: .\templates\account\email_confirm.html:20
 msgid "Confirm"
@@ -40,14 +40,14 @@ msgstr "تایید"
 #: .\templates\account\email_confirm.html:27
 #, python-format
 msgid ""
-"This e-mail confirmation link expired or is invalid. Please <a "
-"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
-"این پیوند تأیید ایمیل منقضی شده یا نامعتبر است. لطفاً <a "
-"href=\"%(email_url)s\">یک درخواست تأیید ایمیل جدید صادر کنید</a>."
+"این پیوند تأیید ایمیل منقضی شده یا نامعتبر است. لطفاً <a href=\"%(email_url)s"
+"\">یک درخواست تأیید ایمیل جدید صادر کنید</a>."
 
 #: .\templates\account\login.html:11 .\templates\account\login.html:20
-#: .\templates\top_header.html:82
+#: .\templates\top_header.html:85
 msgid "login"
 msgstr "ورود"
 
@@ -83,94 +83,94 @@ msgstr "تومان"
 msgid "Recent Products"
 msgstr "محصولات اخیر"
 
-#: .\templates\top_header.html:8
+#: .\templates\top_header.html:11
 msgid "hello"
 msgstr "سلام"
 
-#: .\templates\top_header.html:41
+#: .\templates\top_header.html:44
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: .\templates\top_header.html:47
+#: .\templates\top_header.html:50
 msgid "Dresses"
 msgstr "لباس"
 
-#: .\templates\top_header.html:49
+#: .\templates\top_header.html:52
 msgid "Men's Dresses"
 msgstr "لباس مردانه"
 
-#: .\templates\top_header.html:50
+#: .\templates\top_header.html:53
 msgid "Women's Dresses"
 msgstr "لباس زنانه"
 
-#: .\templates\top_header.html:51
+#: .\templates\top_header.html:54
 msgid "Baby's Dresses"
 msgstr "لباس نوزاد"
 
-#: .\templates\top_header.html:54
+#: .\templates\top_header.html:57
 msgid "Shirts"
 msgstr "پیراهن"
 
-#: .\templates\top_header.html:55
+#: .\templates\top_header.html:58
 msgid "Jeans"
 msgstr "شلوار جین"
 
-#: .\templates\top_header.html:56
+#: .\templates\top_header.html:59
 msgid "Swimwear"
 msgstr "لباس شنا"
 
-#: .\templates\top_header.html:57
+#: .\templates\top_header.html:60
 msgid "Sleepwear"
 msgstr "لباس خواب"
 
-#: .\templates\top_header.html:58
+#: .\templates\top_header.html:61
 msgid "Sportswear"
 msgstr "لباس ورزشی"
 
-#: .\templates\top_header.html:59
+#: .\templates\top_header.html:62
 msgid "Jumpsuits"
 msgstr "لباس های سرپوشیده"
 
-#: .\templates\top_header.html:60
+#: .\templates\top_header.html:63
 msgid "Blazers"
 msgstr "بلیزر"
 
-#: .\templates\top_header.html:61
+#: .\templates\top_header.html:64
 msgid "Jackets"
 msgstr "ژاکت"
 
-#: .\templates\top_header.html:62
+#: .\templates\top_header.html:65
 msgid "Shoes"
 msgstr "کفش"
 
-#: .\templates\top_header.html:73
+#: .\templates\top_header.html:76
 msgid "Home"
 msgstr ""
 
-#: .\templates\top_header.html:74
+#: .\templates\top_header.html:77
 msgid "Shop"
 msgstr ""
 
-#: .\templates\top_header.html:75
+#: .\templates\top_header.html:78
 msgid "Contact"
 msgstr "تماس با ما"
 
-#: .\templates\top_header.html:80
+#: .\templates\top_header.html:83
 msgid "My Account"
 msgstr "حساب من"
 
-#: .\templates\top_header.html:83
+#: .\templates\top_header.html:86
 msgid "Sign up"
 msgstr "ثبت نام"
 
-#: .\templates\top_header.html:87
+#: .\templates\top_header.html:90
 msgid "Profile"
 msgstr "حساب کاربری"
 
-#: .\templates\top_header.html:90
+#: .\templates\top_header.html:93
 msgid "EN"
 msgstr "انگلیسی"
 
-#: .\templates\top_header.html:92
+#: .\templates\top_header.html:95
 msgid "FR"
 msgstr "فارسی"
