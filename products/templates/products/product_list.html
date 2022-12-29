@@ -3,6 +3,9 @@
 <!-- Django tags -->
 {% load i18n %}
 
+<!-- My tags -->
+{% load persian_translation_tags %}
+
 {% block title %}
 
     {% trans "Product List" %}
@@ -191,7 +194,7 @@
                             <div class="text-center py-4">
                                 <a class="h6 text-decoration-none text-truncate" href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                                 <div class="d-flex align-items-center justify-content-center mt-2">
-                                    <h5>{% trans "$" %}{{ product.price}}</h5>
+                                    <h5>{% trans "$" %}{{ product.price|persian_numbers }}</h5>
                                 </div>
                                 {% comment %} <div class="d-flex align-items-center justify-content-center mb-1">
                                     <small class="fa fa-star text-primary mr-1"></small>

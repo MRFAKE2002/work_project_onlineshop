@@ -1,6 +1,6 @@
 from django import template
 
-register = template.Library
+register = template.Library()
 
 @register.filter
 def persian_numbers(number):

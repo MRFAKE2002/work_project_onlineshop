@@ -1,5 +1,8 @@
 {% load i18n %}
 
+<!-- My tags -->
+{% load persian_translation_tags %}
+
 <!-- Topbar Start -->
 <div class="container-fluid">
     <div class="row bg-secondary py-1 px-xl-5">
@@ -94,7 +97,7 @@
                         </div>
                         <a href="{% url "cart:cart_details_page" %}" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
-                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">{{ cart|length }}</span>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">{{ cart|length|persian_numbers }}</span>
                         </a>
                     </div>
                 </div>

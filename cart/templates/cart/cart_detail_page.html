@@ -3,6 +3,9 @@
 <!-- Django tags -->
 {% load i18n %}
 
+<!-- My tags -->
+{% load persian_translation_tags %}
+
 {% block title %}
 
     {% trans "Cart" %}
@@ -45,7 +48,7 @@
                         {% for product in cart %}
                             <tr>
                                 <td class="align-middle"><img src="{{ product.product_info.image.url }}" alt="" style="width: 50px;">{{ product.product_info.name }}</td>
-                                <td class="align-middle">{% trans "$" %}{{ product.product_info.price }}</td>
+                                <td class="align-middle">{% trans "$" %}{{ product.product_info.price|persian_numbers }}</td>
                                 <td class="align-middle">
                                     <form method="POST" action="{% url 'cart:add_product_to_cart' product.product_info.id %}">
                                         {% csrf_token %}
@@ -65,7 +68,7 @@
                                         {{ product.product_inplace_current_quantity.inplace }}
                                     </form>
                                 </td>
-                                <td class="align-middle">{% trans "$" %}{{ product.total }}</td>
+                                <td class="align-middle">{% trans "$" %}{{ product.total|persian_numbers }}</td>
                                 <form action="{% url 'cart:remove_product_from_cart' product.product_info.id %}" method="post">
                                     {% csrf_token %}
                                     <td td class="align-middle"><button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
@@ -109,7 +112,7 @@
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>{% trans "Total"%}</h5>
-                            <h5>{% trans "$" %}{{ cart.get_total_price }}</h5>
+                            <h5>{% trans "$" %}{{ cart.get_total_price|persian_numbers }}</h5>
                         </div>
                         <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">{% trans "Proceed To Checkout"%}</button>
                     </div>
