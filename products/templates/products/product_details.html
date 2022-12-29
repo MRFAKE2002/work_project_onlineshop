@@ -230,7 +230,7 @@
                         <div class="row">
                             {% if user.is_authenticated %}
                             <div class="col-md-6">
-                                    <h4 class="mb-4">{% trans "Leave a review"%}</h4>
+                                    <h4 class="mb-4">{% trans "Leave a review" %}</h4>
                                     {% comment %} 
                                     <small>Your email address will not be published. Required fields are marked *</small>
                                     <div class="d-flex my-3">
@@ -252,7 +252,7 @@
                                             <input name="body" id="message" cols="30" rows="5" class="form-control"></input>
                                         </div> {% endcomment %}
                                         <div class="form-group mb-0">
-                                            <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+                                            <input type="submit" value="{% trans "Submit" %}" class="btn btn-primary px-3">
                                         </div>
                                     </form>
                                 </div>

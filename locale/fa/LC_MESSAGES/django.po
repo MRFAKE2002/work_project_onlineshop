@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-29 16:35+0330\n"
+"POT-Creation-Date: 2022-12-29 16:51+0330\n"
 "PO-Revision-Date: 2022-12-28 20:01+0330\n"
 "Last-Translator:   <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,19 +67,19 @@ msgstr "آیا می خواهید از سیستم خارج شوید؟"
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\templates\home.html:8
+#: .\templates\home.html:12
 msgid "home"
 msgstr "صفحه اصلی"
 
-#: .\templates\home.html:17
+#: .\templates\home.html:21
 msgid "Featured Products"
 msgstr "محصولات ویژه"
 
-#: .\templates\home.html:34 .\templates\home.html:75
+#: .\templates\home.html:38 .\templates\home.html:79
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\home.html:58
+#: .\templates\home.html:62
 msgid "Recent Products"
 msgstr "محصولات اخیر"
 
