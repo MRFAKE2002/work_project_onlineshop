@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-30 22:32+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\order\models.py:8
+msgid "user"
+msgstr ""
+
+#: .\order\models.py:10
+msgid "first name"
+msgstr ""
+
+#: .\order\models.py:12
+msgid "last name"
+msgstr ""
+
+#: .\order\models.py:14
+msgid "phone number"
+msgstr ""
+
+#: .\order\models.py:16
+msgid "address"
+msgstr ""
+
+#: .\order\models.py:18
+msgid "note"
+msgstr ""
+
+#: .\order\models.py:20
+msgid "paid"
+msgstr ""
+
+#: .\order\models.py:22
+msgid "datetime_created"
+msgstr ""
+
+#: .\order\models.py:23
+msgid "datetime_modified"
+msgstr ""
+
+#: .\order\models.py:30
+msgid "order"
+msgstr ""
+
+#: .\order\models.py:32
+msgid "Product"
+msgstr ""
+
+#: .\order\models.py:34
+msgid "quantity"
+msgstr ""
+
+#: .\order\models.py:36
+msgid "price"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:12
+msgid "Order"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:23
+msgid "Home"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:24
+msgid "Shop"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:25
+msgid "Checkout"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:37
+msgid "Billing Address"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:41
+msgid "First Name"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:45
+msgid "Last Name"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:49
+msgid "E-mail"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:53
+msgid "Mobile No"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:57
+msgid "Address"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:65
+msgid "Country"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:74
+msgid "City"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:78
+msgid "State"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:101
+msgid "Order Total"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:104
+msgid "Products"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:107
+#: .\order\templates\order\order_created.html:111
+#: .\order\templates\order\order_created.html:115
+#: .\order\templates\order\order_created.html:121
+#: .\order\templates\order\order_created.html:125
+#: .\order\templates\order\order_created.html:131
+msgid "$"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:120
+msgid "Subtotal"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:124
+msgid "Shipping"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:130
+msgid "Total"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:136
+msgid "Payment"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:141
+msgid "Paypal"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:147
+msgid "Direct Check"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:153
+msgid "Bank Transfer"
+msgstr ""
+
+#: .\order\templates\order\order_created.html:156
+msgid "Place Order"
+msgstr ""
