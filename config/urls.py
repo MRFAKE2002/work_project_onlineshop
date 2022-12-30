@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('products/', include('products.urls', namespace='product')),
     path('cart/', include('cart.urls', namespace='cart')),
+    path('order/', include('order.urls', namespace='order')),
     
     # Rosetta
     path('rosetta/', include('rosetta.urls')),
