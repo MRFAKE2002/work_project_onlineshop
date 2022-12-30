@@ -1,3 +1,39 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+from django.utils.translation import gettext as _
 
-# Create your models here.
+from products.models import Product
+
+class Order(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_("user"))
+    
+    first_name = models.CharField(_("first name"), max_length=100)
+    
+    last_name = models.CharField(_("last name"), max_length=100)
+    
+    phone = models.PositiveIntegerField(_("phone number"), max_length=13)
+
+    address = models.TextField(_("address"))
+    
+    note = models.CharField(_("note"), max_length=200, blank=True)
+    
+    is_paid = models.BooleanField(_("paid"), default=False)
+    
+    datetime_created = models.DateTimeField(_('datetime_created'), auto_now_add=True)
+    datetime_modified = models.DateTimeField(_('datetime_modified'), auto_now=True)
+    
+    def __str__(self):
+        return self.id
+    
+    
+class OrderItems(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, verbose_name=_("order"), related_name="items")
+    
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_("Product"), related_name="order")
+    
+    quantity = models.PositiveIntegerField(_("quantity"))
+    
+    price = models.PositiveIntegerField(_("price"))
+    
+    def __str__(self):
+        return f'Order {self.order} : Product {self.product}'
