@@ -4,12 +4,12 @@ from .models import Order, OrderItems
 
 class OrderItemsInline(admin.TabularInline):
     model = OrderItems
-    fields = ['user', 'text', 'stars', 'active',]
+    fields =  ['order', 'product', 'quantity', 'price']
     extra = 1
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['name', 'price','is_active']
+    list_display = ['user', 'first_name','last_name', 'is_paid']
     
     inlines = [
         OrderItemsInline,
@@ -18,5 +18,5 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(OrderItems)
 class OrderItemsAdmin(admin.ModelAdmin):
-    list_display = ['user', 'product', 'stars', 'active']
+    list_display = ['order', 'product', 'quantity', 'price']
 
