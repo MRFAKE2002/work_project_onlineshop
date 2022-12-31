@@ -75,7 +75,7 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="{% url 'home' %}" class="nav-item nav-link active">{% trans "Home" %}</a>
                         <a href="{% url 'product:product_list' %}" class="nav-item nav-link">{% trans "Shop" %}</a>
-                        <a href="contact.html" class="nav-item nav-link">{% trans "Contact"%}</a>
+                        <a href="{% url "contact:contact" %}" class="nav-item nav-link">{% trans "Contact"%}</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                         {% if not user.is_authenticated %}
