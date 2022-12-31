@@ -115,7 +115,7 @@
                             <h5>{% trans "Total"%}</h5>
                             <h5>{% trans "$" %}{{ cart.get_total_price|intcomma:False|persian_numbers }}</h5>
                         </div>
-                        <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">{% trans "Proceed To Checkout"%}</button>
+                        <a href="{% url "order:order_created"%}" class="btn btn-block btn-primary font-weight-bold my-3 py-3">{% trans "Proceed To Checkout"%}</a>
                     </div>
                 </div>
             </div>

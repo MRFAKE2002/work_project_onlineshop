@@ -11,7 +11,7 @@ class Order(models.Model):
     
     last_name = models.CharField(_("last name"), max_length=100)
     
-    phone = models.PositiveIntegerField(_("phone number"), max_length=13)
+    phone = models.CharField(_("phone number"), max_length=20)
 
     address = models.TextField(_("address"))
     
@@ -23,7 +23,7 @@ class Order(models.Model):
     datetime_modified = models.DateTimeField(_('datetime_modified'), auto_now=True)
     
     def __str__(self):
-        return self.id
+        return str(self.id)
     
     
 class OrderItems(models.Model):
@@ -31,7 +31,7 @@ class OrderItems(models.Model):
     
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_("Product"), related_name="order")
     
-    quantity = models.PositiveIntegerField(_("quantity"))
+    quantity = models.PositiveIntegerField(_("quantity"), default=1)
     
     price = models.PositiveIntegerField(_("price"))
     
