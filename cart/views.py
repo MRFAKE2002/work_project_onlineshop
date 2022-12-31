@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.decorators.http import require_POST
+from django.contrib import messages
+from django.utils.translation import gettext as _
 
 from .cart import Cart
 from .forms import AddProductToCartForm
@@ -58,5 +60,7 @@ def clear_cart_view(request):
     cart = Cart(request)
     
     cart.clear()
-
+    
+    messages.error(request, _('The cart has cleared.'))
+    
     return redirect('cart:cart_details_page')

@@ -81,7 +81,6 @@ class Cart:
     def clear(self):
         del self.session['cart']
         
-        messages.error(self.request, _('The cart has cleared.'))
 
         self.save()    
     
