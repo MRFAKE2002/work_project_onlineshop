@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'translate.apps.TranslateConfig',
     'order.apps.OrderConfig',
+    'contact.apps.ContactConfig',
 ]
 
 SITE_ID = 1

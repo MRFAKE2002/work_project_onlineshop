@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-29 16:51+0330\n"
+"POT-Creation-Date: 2022-12-31 19:51+0330\n"
 "PO-Revision-Date: 2022-12-28 19:55+0330\n"
 "Last-Translator:   <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,6 @@ msgstr "محصول با موفقیت به سبد خرید اضافه شد."
 #: .\cart\cart.py:54
 msgid "Product removed from the cart"
 msgstr "محصول از سبد خرید حذف شد."
-
-#: .\cart\cart.py:84
-msgid "The cart has cleared."
-msgstr "سبد خرید ترخیص شده است."
 
 #: .\cart\templates\cart\cart_detail_page.html:12
 msgid "Cart"
@@ -97,3 +93,7 @@ msgstr "سبد خالی است! لطفا چند محصول را به سبد خر
 #: .\cart\templates\cart\cart_detail_page.html:127
 msgid " Go shopping "
 msgstr "رفتن فروشگاه"
+
+#: .\cart\views.py:64
+msgid "The cart has cleared."
+msgstr "سبد خرید ترخیص شده است."

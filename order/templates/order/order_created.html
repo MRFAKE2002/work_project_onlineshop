@@ -90,6 +90,7 @@
                 <div class="mb-5">
                     <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">{% trans "Payment"%}</span></h5>
                     <div class="bg-light p-30">
+                        {% comment %} 
                         <div class="form-group">
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" name="payment" id="paypal">
@@ -101,7 +102,8 @@
                                 <input type="radio" class="custom-control-input" name="payment" id="directcheck">
                                 <label class="custom-control-label" for="directcheck">{% trans "Direct Check"%}</label>
                             </div>
-                        </div>
+                        </div> 
+                        {% endcomment %}
                         <div class="form-group mb-4">
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" name="payment" id="banktransfer">

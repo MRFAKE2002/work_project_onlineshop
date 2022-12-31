@@ -8,164 +8,154 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-30 22:32+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2022-12-31 19:51+0330\n"
+"PO-Revision-Date: 2022-12-31 19:59+0330\n"
+"Last-Translator: هادی بدلی <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
 #: .\order\models.py:8
 msgid "user"
-msgstr ""
+msgstr "کاربر"
 
 #: .\order\models.py:10
 msgid "first name"
-msgstr ""
+msgstr "نام کوچک"
 
 #: .\order\models.py:12
 msgid "last name"
-msgstr ""
+msgstr "نام خانوادگی"
 
 #: .\order\models.py:14
 msgid "phone number"
-msgstr ""
+msgstr "شماره تلفن"
 
 #: .\order\models.py:16
 msgid "address"
-msgstr ""
+msgstr "ادرس"
 
 #: .\order\models.py:18
 msgid "note"
-msgstr ""
+msgstr "یادداشت "
 
 #: .\order\models.py:20
 msgid "paid"
-msgstr ""
+msgstr "پرداخت "
 
 #: .\order\models.py:22
 msgid "datetime_created"
-msgstr ""
+msgstr "زمان ساخته شده"
 
 #: .\order\models.py:23
 msgid "datetime_modified"
-msgstr ""
+msgstr "زمان اصلاح شده"
 
 #: .\order\models.py:30
 msgid "order"
-msgstr ""
+msgstr "سفارش"
 
 #: .\order\models.py:32
 msgid "Product"
-msgstr ""
+msgstr "محصول"
 
 #: .\order\models.py:34
 msgid "quantity"
-msgstr ""
+msgstr "تعداد"
 
 #: .\order\models.py:36
 msgid "price"
-msgstr ""
+msgstr "قیمت"
 
 #: .\order\templates\order\order_created.html:12
 msgid "Order"
-msgstr ""
+msgstr "سفارش"
 
 #: .\order\templates\order\order_created.html:23
 msgid "Home"
-msgstr ""
+msgstr "صفحه اصلی"
 
 #: .\order\templates\order\order_created.html:24
 msgid "Shop"
-msgstr ""
+msgstr "فروشگاه"
 
 #: .\order\templates\order\order_created.html:25
 msgid "Checkout"
-msgstr ""
+msgstr "پرداخت"
 
-#: .\order\templates\order\order_created.html:37
+#: .\order\templates\order\order_created.html:39
 msgid "Billing Address"
-msgstr ""
+msgstr "آدرس "
 
-#: .\order\templates\order\order_created.html:41
+#: .\order\templates\order\order_created.html:43
 msgid "First Name"
-msgstr ""
+msgstr "نام کوچک"
 
-#: .\order\templates\order\order_created.html:45
+#: .\order\templates\order\order_created.html:47
 msgid "Last Name"
-msgstr ""
+msgstr "نام خانوادگی"
 
-#: .\order\templates\order\order_created.html:49
-msgid "E-mail"
-msgstr ""
-
-#: .\order\templates\order\order_created.html:53
+#: .\order\templates\order\order_created.html:51
 msgid "Mobile No"
-msgstr ""
+msgstr "شماره تلفن"
 
-#: .\order\templates\order\order_created.html:57
+#: .\order\templates\order\order_created.html:55
 msgid "Address"
-msgstr ""
+msgstr "آدرس"
 
-#: .\order\templates\order\order_created.html:65
-msgid "Country"
-msgstr ""
+#: .\order\templates\order\order_created.html:59
+msgid "Note"
+msgstr "یادداشت"
 
-#: .\order\templates\order\order_created.html:74
-msgid "City"
-msgstr ""
+#: .\order\templates\order\order_created.html:60
+msgid "Write any note if you want"
+msgstr "در صورت تمایل هر یادداشتی را بنویسید"
 
-#: .\order\templates\order\order_created.html:78
-msgid "State"
-msgstr ""
-
-#: .\order\templates\order\order_created.html:101
+#: .\order\templates\order\order_created.html:66
 msgid "Order Total"
-msgstr ""
+msgstr "مجموع سفارش "
 
-#: .\order\templates\order\order_created.html:104
+#: .\order\templates\order\order_created.html:70
 msgid "Products"
-msgstr ""
+msgstr "محصولات"
 
-#: .\order\templates\order\order_created.html:107
-#: .\order\templates\order\order_created.html:111
-#: .\order\templates\order\order_created.html:115
-#: .\order\templates\order\order_created.html:121
-#: .\order\templates\order\order_created.html:125
-#: .\order\templates\order\order_created.html:131
+#: .\order\templates\order\order_created.html:77
+#: .\order\templates\order\order_created.html:86
 msgid "$"
-msgstr ""
+msgstr "تومان"
 
-#: .\order\templates\order\order_created.html:120
-msgid "Subtotal"
-msgstr ""
-
-#: .\order\templates\order\order_created.html:124
-msgid "Shipping"
-msgstr ""
-
-#: .\order\templates\order\order_created.html:130
+#: .\order\templates\order\order_created.html:85
 msgid "Total"
-msgstr ""
+msgstr "مجموع"
 
-#: .\order\templates\order\order_created.html:136
+#: .\order\templates\order\order_created.html:91
 msgid "Payment"
-msgstr ""
+msgstr "پول"
 
-#: .\order\templates\order\order_created.html:141
+#: .\order\templates\order\order_created.html:96
 msgid "Paypal"
 msgstr ""
 
-#: .\order\templates\order\order_created.html:147
+#: .\order\templates\order\order_created.html:102
 msgid "Direct Check"
-msgstr ""
+msgstr "چک مستقیم"
 
-#: .\order\templates\order\order_created.html:153
+#: .\order\templates\order\order_created.html:108
 msgid "Bank Transfer"
-msgstr ""
+msgstr "درگاه آنلاین"
 
-#: .\order\templates\order\order_created.html:156
+#: .\order\templates\order\order_created.html:111
 msgid "Place Order"
-msgstr ""
+msgstr "ثبت سفارش"
+
+#: .\order\views.py:18
+msgid "You must go shopping at first"
+msgstr "ابتدا باید به خرید بروید."
+
+#: .\order\views.py:44
+msgid "Your order has successfully done"
+msgstr "سفارش شما با موفقیت انجام شد."
