@@ -6,9 +6,17 @@ from django.utils.translation import gettext_lazy as _
 from ckeditor.fields import RichTextField
 
 
+class Categories(models.Model):
+    name = models.CharField(_('name'), max_length=100)
+    slug = models.CharField(_('slug'), max_length=100, unique=True)
+    
+    def __str__(self):
+        return self.name
+
 class Product(models.Model):
     name = models.CharField(max_length=100, verbose_name=_('product name'))
-    description = RichTextField()
+    slug = models.CharField(_('slug'), max_length=100, unique=True)
+    description = RichTextField(_('description'))
     price = models.PositiveIntegerField(_('product price'), default=0)
     
     image = models.ImageField(_('product image'), upload_to='products/product_image/')

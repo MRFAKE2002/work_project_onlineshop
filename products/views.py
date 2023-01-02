@@ -1,19 +1,33 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
 from django.utils.translation import gettext as _
 
 from .forms import CommentForm
-from .models import Product, Comment
+from .models import Product, Comment, Categories
 from cart.forms import AddProductToCartForm
 from cart.cart import Cart
+
+def categories_page_view(request, slug):
+    try:
+        categories_products = get_object_or_404(Product, slug=slug)
+    except :
+        return redirect("home")
+    
+    return render(request, 'categories.html', {'categories_products': categories_products})
+
+
+# class CategoriesPageViews(generic.ListView):
+#     queryset = Product.objects.filter(is_active=True)
+#     template_name = 'categories.html'
+
 
 class ProductListView(generic.ListView):
     # model = Product
     queryset = Product.objects.filter(is_active=True)
     template_name = 'products/product_list.html'
     context_object_name = 'products'
-    
+
 
 class ProductDetailsView(generic.DetailView):
     model = Product
