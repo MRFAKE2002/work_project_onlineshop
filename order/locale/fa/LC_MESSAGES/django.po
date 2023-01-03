@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-31 19:51+0330\n"
+"POT-Creation-Date: 2023-01-03 13:29+0330\n"
 "PO-Revision-Date: 2022-12-31 19:59+0330\n"
 "Last-Translator: هادی بدلی <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,19 +136,11 @@ msgstr "مجموع"
 msgid "Payment"
 msgstr "پول"
 
-#: .\order\templates\order\order_created.html:96
-msgid "Paypal"
-msgstr ""
-
-#: .\order\templates\order\order_created.html:102
-msgid "Direct Check"
-msgstr "چک مستقیم"
-
-#: .\order\templates\order\order_created.html:108
+#: .\order\templates\order\order_created.html:111
 msgid "Bank Transfer"
 msgstr "درگاه آنلاین"
 
-#: .\order\templates\order\order_created.html:111
+#: .\order\templates\order\order_created.html:114
 msgid "Place Order"
 msgstr "ثبت سفارش"
 
@@ -159,3 +151,6 @@ msgstr "ابتدا باید به خرید بروید."
 #: .\order\views.py:44
 msgid "Your order has successfully done"
 msgstr "سفارش شما با موفقیت انجام شد."
+
+#~ msgid "Direct Check"
+#~ msgstr "چک مستقیم"

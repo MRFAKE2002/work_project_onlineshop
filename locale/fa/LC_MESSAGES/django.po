@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-29 16:51+0330\n"
-"PO-Revision-Date: 2022-12-28 20:01+0330\n"
-"Last-Translator:   <roozbehsarcheshme@gmail.com>\n"
+"POT-Creation-Date: 2023-01-03 13:29+0330\n"
+"PO-Revision-Date: 2023-01-03 13:34+0330\n"
+"Last-Translator: هادی بدلی <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\contact\models.py:5
+msgid "first name"
+msgstr "نام کوچک"
+
+#: .\contact\models.py:7
+msgid "last_name"
+msgstr "نام خانوادگی"
+
+#: .\contact\models.py:9
+msgid "email"
+msgstr "ایمیل"
+
+#: .\contact\models.py:11
+msgid "message"
+msgstr "پیام"
+
+#: .\contact\templates\contact\contact.html:8
+#: .\contact\templates\contact\contact.html:28
+#| msgid "Contact"
+msgid "Contact Us"
+msgstr "تماس با ما"
+
+#: .\contact\templates\contact\contact.html:58
+msgid "Send Message"
+msgstr "پیام فرستادن"
 
 #: .\templates\account\email_confirm.html:6
 #: .\templates\account\email_confirm.html:10
@@ -30,8 +56,8 @@ msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
 "address for user %(user_display)s."
 msgstr ""
-"لطفاً تأیید کنید که <a href=\"mailto:%(email)s\">%(email)s</a> یک آدرس ایمیل "
-"برای کاربر %(user_display)s است."
+"لطفاً تأیید کنید که <a href=\"mailto:%(email)s\">%(email)s</a> یک آدرس ایمیل"
+" برای کاربر %(user_display)s است."
 
 #: .\templates\account\email_confirm.html:20
 msgid "Confirm"
@@ -40,14 +66,14 @@ msgstr "تایید"
 #: .\templates\account\email_confirm.html:27
 #, python-format
 msgid ""
-"This e-mail confirmation link expired or is invalid. Please <a href="
-"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+"This e-mail confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
-"این پیوند تأیید ایمیل منقضی شده یا نامعتبر است. لطفاً <a href=\"%(email_url)s"
-"\">یک درخواست تأیید ایمیل جدید صادر کنید</a>."
+"این پیوند تأیید ایمیل منقضی شده یا نامعتبر است. لطفاً <a "
+"href=\"%(email_url)s\">یک درخواست تأیید ایمیل جدید صادر کنید</a>."
 
 #: .\templates\account\login.html:11 .\templates\account\login.html:20
-#: .\templates\top_header.html:85
+#: .\templates\top_header.html:90
 msgid "login"
 msgstr "ورود"
 
@@ -67,6 +93,43 @@ msgstr "آیا می خواهید از سیستم خارج شوید؟"
 msgid "signup"
 msgstr "ثبت نام"
 
+#: .\templates\categories.html:12
+msgid "Product List"
+msgstr "لیست محصولات"
+
+#: .\templates\categories.html:23 .\templates\top_header.html:81
+msgid "Home"
+msgstr "صفحه اصلی"
+
+#: .\templates\categories.html:24
+msgid "Shop List"
+msgstr "لیست فروشگاه"
+
+#: .\templates\categories.html:38
+msgid "Filter by price"
+msgstr "فیلتر بر اساس قیمت"
+
+#: .\templates\categories.html:76
+msgid "Filter by color"
+msgstr "فیلتر بر اساس رنگ"
+
+#: .\templates\categories.html:114
+msgid "Filter by size"
+msgstr "فیلتر بر اساس اندازه"
+
+#: .\templates\categories.html:197 .\templates\home.html:38
+#: .\templates\home.html:79
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\categories.html:215
+msgid "Previous"
+msgstr "قبلی"
+
+#: .\templates\categories.html:221
+msgid "Next"
+msgstr "بعد"
+
 #: .\templates\home.html:12
 msgid "home"
 msgstr "صفحه اصلی"
@@ -74,10 +137,6 @@ msgstr "صفحه اصلی"
 #: .\templates\home.html:21
 msgid "Featured Products"
 msgstr "محصولات ویژه"
-
-#: .\templates\home.html:38 .\templates\home.html:79
-msgid "$"
-msgstr "تومان"
 
 #: .\templates\home.html:62
 msgid "Recent Products"
@@ -91,86 +150,80 @@ msgstr "سلام"
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: .\templates\top_header.html:50
-msgid "Dresses"
-msgstr "لباس"
+#: .\templates\top_header.html:60
+msgid "Pants"
+msgstr "شلوار"
 
-#: .\templates\top_header.html:52
-msgid "Men's Dresses"
-msgstr "لباس مردانه"
-
-#: .\templates\top_header.html:53
-msgid "Women's Dresses"
-msgstr "لباس زنانه"
-
-#: .\templates\top_header.html:54
-msgid "Baby's Dresses"
-msgstr "لباس نوزاد"
-
-#: .\templates\top_header.html:57
-msgid "Shirts"
-msgstr "پیراهن"
-
-#: .\templates\top_header.html:58
+#: .\templates\top_header.html:62
 msgid "Jeans"
 msgstr "شلوار جین"
 
-#: .\templates\top_header.html:59
-msgid "Swimwear"
-msgstr "لباس شنا"
-
-#: .\templates\top_header.html:60
-msgid "Sleepwear"
-msgstr "لباس خواب"
-
-#: .\templates\top_header.html:61
-msgid "Sportswear"
-msgstr "لباس ورزشی"
-
-#: .\templates\top_header.html:62
-msgid "Jumpsuits"
-msgstr "لباس های سرپوشیده"
-
 #: .\templates\top_header.html:63
+#| msgid "Sportswear"
+msgid "Sports Pants"
+msgstr "شلوار ورزشی"
+
+#: .\templates\top_header.html:66
+msgid "Shirts"
+msgstr "پیراهن"
+
+#: .\templates\top_header.html:67
 msgid "Blazers"
 msgstr "بلیزر"
 
-#: .\templates\top_header.html:64
+#: .\templates\top_header.html:68
 msgid "Jackets"
 msgstr "ژاکت"
 
-#: .\templates\top_header.html:65
+#: .\templates\top_header.html:69
 msgid "Shoes"
 msgstr "کفش"
 
-#: .\templates\top_header.html:76
-msgid "Home"
-msgstr ""
-
-#: .\templates\top_header.html:77
+#: .\templates\top_header.html:82
 msgid "Shop"
-msgstr ""
+msgstr "فروشگاه"
 
-#: .\templates\top_header.html:78
+#: .\templates\top_header.html:83
 msgid "Contact"
 msgstr "تماس با ما"
 
-#: .\templates\top_header.html:83
+#: .\templates\top_header.html:88
 msgid "My Account"
 msgstr "حساب من"
 
-#: .\templates\top_header.html:86
+#: .\templates\top_header.html:91
 msgid "Sign up"
 msgstr "ثبت نام"
 
-#: .\templates\top_header.html:90
+#: .\templates\top_header.html:95
 msgid "Profile"
 msgstr "حساب کاربری"
 
-#: .\templates\top_header.html:93
+#: .\templates\top_header.html:98
 msgid "EN"
 msgstr "انگلیسی"
 
-#: .\templates\top_header.html:95
+#: .\templates\top_header.html:100
 msgid "FR"
 msgstr "فارسی"
+
+#~ msgid "Dresses"
+#~ msgstr "لباس"
+
+#~ msgid "Men's Dresses"
+#~ msgstr "لباس مردانه"
+
+#~ msgid "Women's Dresses"
+#~ msgstr "لباس زنانه"
+
+#~ msgid "Baby's Dresses"
+#~ msgstr "لباس نوزاد"
+
+#~ msgid "Swimwear"
+#~ msgstr "لباس شنا"
+
+#~ msgid "Sleepwear"
+#~ msgstr "لباس خواب"
+
+#~ msgid "Jumpsuits"
+#~ msgstr "لباس های سرپوشیده"

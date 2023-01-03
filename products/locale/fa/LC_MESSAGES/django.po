@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-30 22:32+0330\n"
-"PO-Revision-Date: 2023-01-01 22:47+0330\n"
+"POT-Creation-Date: 2023-01-03 13:29+0330\n"
+"PO-Revision-Date: 2023-01-03 13:33+0330\n"
 "Last-Translator: هادی بدلی <roozbehsarcheshme@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,66 +20,79 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\products\models.py:10
+msgid "name"
+msgstr "نام"
+
+#: .\products\models.py:11 .\products\models.py:18
+msgid "slug"
+msgstr ""
+
+#: .\products\models.py:17
 msgid "product name"
 msgstr "نام محصول"
 
-#: .\products\models.py:12
+#: .\products\models.py:19
+#| msgid "Description"
+msgid "description"
+msgstr "شرح"
+
+#: .\products\models.py:20
 msgid "product price"
 msgstr "قیمت کالا"
 
-#: .\products\models.py:14
+#: .\products\models.py:22
 msgid "product image"
 msgstr "تصویر محصول"
 
-#: .\products\models.py:16
+#: .\products\models.py:24
 msgid "datetime_created"
 msgstr "زمان ایجاد شده"
 
-#: .\products\models.py:17
+#: .\products\models.py:25
 msgid "datetime_modified"
 msgstr "زمان اصلاح شده"
 
-#: .\products\models.py:19
+#: .\products\models.py:27
 msgid "is_active"
 msgstr "فعال "
 
-#: .\products\models.py:29
+#: .\products\models.py:37
 msgid "awful"
 msgstr "خیلی بد"
 
-#: .\products\models.py:30
+#: .\products\models.py:38
 msgid "bad"
 msgstr "بد"
 
-#: .\products\models.py:31
+#: .\products\models.py:39
 msgid "normal"
 msgstr "معمولی"
 
-#: .\products\models.py:32
+#: .\products\models.py:40
 msgid "good"
 msgstr "خوب"
 
-#: .\products\models.py:33
+#: .\products\models.py:41
 msgid "perfect"
 msgstr "عالی "
 
-#: .\products\models.py:36
+#: .\products\models.py:44
 msgid "user"
 msgstr "کاربر"
 
-#: .\products\models.py:37
+#: .\products\models.py:45
 msgid "product"
 msgstr "محصول"
 
-#: .\products\models.py:39
+#: .\products\models.py:47
 msgid "text"
 msgstr "متن"
 
-#: .\products\models.py:40
+#: .\products\models.py:48
 msgid "stars"
 msgstr "امتیاز"
 
-#: .\products\models.py:42
+#: .\products\models.py:50
 msgid "Date time created"
 msgstr "زمان ایجاد شده"
 
@@ -211,7 +224,7 @@ msgstr "قبلی"
 msgid "Next"
 msgstr "بعد"
 
-#: .\products\views.py:54
+#: .\products\views.py:68
 msgid "Comment created successfully."
 msgstr "نظر با موفقیت ایجاد شد."
 
