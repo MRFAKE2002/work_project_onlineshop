@@ -17,6 +17,10 @@ class Order(models.Model):
     
     note = models.CharField(_("note"), max_length=200, blank=True)
     
+    zarinpal_authority = models.CharField(_("zarinpal_authority"), max_length=225, blank=True)
+    zarinpal_ref_id = models.CharField(_("zarinpal_ref_id"), max_length=150, blank=True)
+    zarinpal_data = models.TextField(_("zarinpal_data"), blank=True)
+    
     is_paid = models.BooleanField(_("paid"), default=False)
     
     datetime_created = models.DateTimeField(_('datetime_created'), auto_now_add=True)
@@ -24,6 +28,9 @@ class Order(models.Model):
     
     def __str__(self):
         return str(self.id)
+    
+    def get_total_price(self):
+        return sum(item.price * item.quantity for item in self.items.all())
     
     
 class OrderItems(models.Model):

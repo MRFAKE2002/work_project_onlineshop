@@ -41,9 +41,9 @@ def order_created_view(request):
         request.user.last_name = order.last_name
         request.user.save()
         
-        messages.success(request, _("Your order has successfully done"))
-        
-        return redirect("home")
+        request.session['order_id'] = order.id
+                
+        return redirect("payment:payment")
     
     return  render(request, 'order/order_created.html', {
         'form': form,

@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'translate.apps.TranslateConfig',
     'order.apps.OrderConfig',
     'contact.apps.ContactConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 SITE_ID = 1
@@ -231,3 +232,5 @@ ACCOUNT_UNIQUE_EMAIL = True
 MESSAGE_TAGS = {
     messages.ERROR : 'danger',
 }
+
+# ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_PAYMENT_ID")
