@@ -4,17 +4,17 @@ from django.contrib import messages
 from django.utils.translation import gettext as _
 
 from .forms import CommentForm
-from .models import Product, Comment, Categories
+from .models import Product, Comment, Category
 from cart.forms import AddProductToCartForm
 from cart.cart import Cart
 
 def categories_page_view(request, slug):
     try:
-        categories_products = get_object_or_404(Product, slug=slug)
+        category = get_object_or_404(Category, slug=slug)
     except :
         return redirect("home")
     
-    return render(request, 'categories.html', {'categories_products': categories_products})
+    return render(request, 'categories.html', {'category': category})
 
 
 # class CategoriesPageViews(generic.ListView):
@@ -24,7 +24,7 @@ def categories_page_view(request, slug):
 
 class ProductListView(generic.ListView):
     # model = Product
-    queryset = Product.objects.filter(is_active=True)
+    queryset = Product.objects.published()
     template_name = 'products/product_list.html'
     context_object_name = 'products'
 

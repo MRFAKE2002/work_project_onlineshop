@@ -180,10 +180,11 @@
                         </div>
                     </div>
                 </div>
+                {% for product in category.products.all %}
                 <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                     <div class="product-item bg-light mb-4">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ categories_products.image.url }}" alt="">
+                            <img class="img-fluid w-100" src="{{ product.image.url }}" alt="">
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
@@ -192,9 +193,9 @@
                             </div>
                         </div>
                         <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="{{ categories_products.get_absolute_url }}">{{ categories_products.name }}</a>
+                            <a class="h6 text-decoration-none text-truncate" href="{{ product.get_absolute_url }}">{{ categories_products.name }}</a>
                             <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5>{% trans "$" %}{{ categories_products.price|intcomma:False|persian_numbers }}</h5>
+                                <h5>{% trans "$" %}{{ product.price|intcomma:False|persian_numbers }}</h5>
                             </div>
                             {% comment %} <div class="d-flex align-items-center justify-content-center mb-1">
                                 <small class="fa fa-star text-primary mr-1"></small>
@@ -207,6 +208,7 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
                 <div class="col-12">
                     <nav>
                         <ul class="pagination justify-content-center">

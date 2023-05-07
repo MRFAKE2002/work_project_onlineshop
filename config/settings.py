@@ -104,6 +104,7 @@ TEMPLATES = [
                 # Custom context_processors
                 'cart.context_processors.cart',
                 'products.context_processors.products',
+                'products.context_processors.categories',
             ],
         },
     },
@@ -193,9 +194,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-
 # for send a confirmation to console
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -215,17 +213,27 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # allauth config  
 
+LOGIN_REDIRECT_URL = 'home'
+
+LOGOUT_REDIRECT_URL = 'home'
+
 ACCOUNT_SESSION_REMEMBER = True  
 
-# ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
-# ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USERNAME_REQUIRED = False
 
 ACCOUNT_EMAIL_REQUIRED = True
 
 ACCOUNT_UNIQUE_EMAIL = True
+
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+# ۱ day
+
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 
 # For messages framework 
 
@@ -234,3 +242,4 @@ MESSAGE_TAGS = {
 }
 
 # ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_PAYMENT_ID")
+

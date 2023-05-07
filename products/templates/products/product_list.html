@@ -32,7 +32,7 @@
 <!-- Shop Start -->
 <div class="container-fluid">
     <div class="row px-xl-5">
-        <!-- Shop Sidebar Start -->
+        {% comment %} <!-- Shop Sidebar Start -->
         <div class="col-lg-3 col-md-4">
             <!-- Price Start -->
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">{% trans "Filter by price"%}</span></h5>
@@ -148,13 +148,13 @@
             </div>
             <!-- Size End -->
         </div>
-        <!-- Shop Sidebar End -->
+        <!-- Shop Sidebar End --> {% endcomment %}
 
 
         <!-- Shop Product Start -->
         <div class="col-lg-9 col-md-8">
             <div class="row pb-3">
-                <div class="col-12 pb-1">
+                {% comment %} <div class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <div>
                             <button class="btn btn-sm btn-light"><i class="fa fa-th-large"></i></button>
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
                 {% for product in products %}
                     <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                         <div class="product-item bg-light mb-4">

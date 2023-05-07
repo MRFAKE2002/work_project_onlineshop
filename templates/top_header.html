@@ -44,17 +44,16 @@
                 <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>{% trans "Categories"%}</h6>
                 <i class="fa fa-angle-down text-dark"></i>
             </a>
-            {% for product in products %}
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
-                    <div class="navbar-nav w-100">
-                        {% comment %} <div class="nav-item dropdown dropright">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{% trans "Dresses"%} <i class="fa fa-angle-right float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
-                                <a href="{% url "product:categories" "Men's_Dresses" %}" class="dropdown-item">{% trans "Men's Dresses"%}</a>
-                                <a href="{% url "product:categories" "Women's_Dresses" %}" class="dropdown-item">{% trans "Women's Dresses"%}</a>
-                                <a href="{% url "product:categories" "Baby's_Dresses" %}" class="dropdown-item">{% trans "Baby's Dresses"%}</a>
-                            </div>
-                        </div> {% endcomment %}
+            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+                <div class="navbar-nav w-100">
+                    {% comment %} 
+                    <div class="nav-item dropdown dropright">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{% trans "Dresses"%} <i class="fa fa-angle-right float-right mt-1"></i></a>
+                        <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
+                            <a href="{% url "product:categories" "Men's_Dresses" %}" class="dropdown-item">{% trans "Men's Dresses"%}</a>
+                            <a href="{% url "product:categories" "Women's_Dresses" %}" class="dropdown-item">{% trans "Women's Dresses"%}</a>
+                            <a href="{% url "product:categories" "Baby's_Dresses" %}" class="dropdown-item">{% trans "Baby's Dresses"%}</a>
+                        </div>
                         <div class="nav-item dropdown dropright">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{% trans "Pants"%} <i class="fa fa-angle-right float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute rounded-0 border-0 m-0">
@@ -62,13 +61,13 @@
                                 <a href="{% url "product:categories" "Sports_Pants" %}" class="nav-item nav-link">{% trans "Sports Pants"%}</a>
                             </div>
                         </div>
-                        <a href="{% url "product:categories" "Shirts" %}" class="nav-item nav-link">{% trans "Shirts"%}</a>
-                        <a href="{% url "product:categories" "Blazers" %}" class="nav-item nav-link">{% trans "Blazers"%}</a>
-                        <a href="{% url "product:categories" "Jackets" %}" class="nav-item nav-link">{% trans "Jackets"%}</a>
-                        <a href="{% url "product:categories" "Shoes" %}" class="nav-item nav-link">{% trans "Shoes"%}</a>
-                    </div>
-                </nav>
-            {% endfor %}
+                    </div> 
+                    {% endcomment %}
+                    {% for category in categories %}
+                        <a href="{% url "product:categories" category.slug %}" class="nav-item nav-link">{{ category.title }}</a>
+                    {% endfor %}
+                </div>
+            </nav>
         </div>
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
@@ -86,19 +85,13 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{% trans "My Account"%}</button>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="{% url "account_login" %}" class="dropdown-item" >{% trans "login"%}</a>
+                                    <a href="{% url "accounts:login" %}" class="dropdown-item" >{% trans "login"%}</a>
                                     <a href="{% url "account_signup" %}" class="dropdown-item" >{% trans "Sign up"%}</a>
                                 </div>
                             </div>
                         {% else %}
                             <a href="{% url "profile" %}" class="btn btn-sm btn-light dropdown-toggle">{% trans "Profile" %}</a>
                         {% endif %}
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{% trans "EN"%}</button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">{% trans "FR"%}</button>
-                            </div>
-                        </div>
                         <a href="{% url "cart:cart_details_page" %}" class="btn px-0 ml-3">
                             <i class="fas fa-shopping-cart text-primary"></i>
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">{{ cart|length|persian_numbers }}</span>
