@@ -40,6 +40,7 @@ class ProductManager(models.Manager):
     def published(self):
         return self.filter(is_active=True).order_by('published')
 
+
 class Product(models.Model):
     
     name = models.CharField(_('product name'), max_length=200 )
@@ -69,13 +70,26 @@ class Product(models.Model):
         verbose_name_plural = _('products')
         ordering = ('published',)
 
+    # Django functions 
 
     def __str__(self):
         return self.name
     
     def get_absolute_url(self):
+        """
+        We use this method to get the absolute url for the product.
+        """
         return reverse('product:product_details', args=[self.slug])
-    
+       
+    # My functions 
+        
+    def categories_to_string(self):
+        """
+        We use the following function to convert a list of categories to a string.
+        """
+        return " , ".join([category.title for category in self.category.active()])
+    categories_to_string.short_description = _('Categories')
+
     objects = ProductManager()
     
 

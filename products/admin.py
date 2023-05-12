@@ -12,7 +12,7 @@ class CommentProductInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
-    list_display = ['name', 'slug', 'price','is_active']
+    list_display = ['name', 'slug', 'categories_to_string', 'price', 'is_active']
 
     search_fields = ['name', 'slug']
     

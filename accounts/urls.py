@@ -5,6 +5,7 @@
 
 from django.contrib.auth import views
 from django.urls import path
+from .views import AdminPageView
 
 app_name = "accounts"
 
@@ -36,4 +37,8 @@ urlpatterns = [
         views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
+]
+
+urlpatterns += [
+    path('admin/', AdminPageView.as_view(), name='admin'),   
 ]

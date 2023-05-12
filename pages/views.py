@@ -11,3 +11,5 @@ class HomePageView(generic.ListView):
 
 class ProfilePageView(generic.TemplateView):
     template_name = 'pages/profile.html'
+
+

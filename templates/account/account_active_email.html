@@ -1,0 +1,9 @@
+{% load i18n %}
+
+{% autoescape off %}
+
+{% trans "hello" %} {{ user.username}}
+{% trans "Please click the link below to complete the registration." %}
+<a href="http: //{{ demain }}{% url "activate" uidb64=uid token=token %}">link</a>
+
+{% endautoescape %}
