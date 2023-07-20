@@ -5,7 +5,7 @@
 
 from django.contrib.auth import views
 from django.urls import path
-from .views import AdminPageView
+from .views import *
 
 app_name = "accounts"
 
@@ -40,5 +40,9 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('admin/', AdminPageView.as_view(), name='admin'),   
+    path('', HomeAdminView.as_view(), name='home'), 
+    path('products/', ProductListAdminView.as_view(), name='product_list'), 
+    path('products/created/', ProductCreatedAdminView.as_view(), name='product_created'), 
+    path('products/updated/<slug:slug>', ProductUpdatedAdminView.as_view(), name='product_updated'), 
+    path('products/deleted/<slug:slug>', ProductDeletedAdminView.as_view(), name='product_deleted'), 
 ]

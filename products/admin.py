@@ -2,6 +2,17 @@ from django.contrib import admin
 
 from .models import Product, Comment, Category
 from jalali_date.admin import ModelAdminJalaliMixin
+from django.utils.translation import gettext_lazy as _
+
+
+def make_active_True(modeladmin, request, queryset):
+    queryset.update(is_active=True)
+make_active_True.short_description = _("Make the product active.")
+
+
+def make_status_True(modeladmin, request, queryset):
+    queryset.update(status=True)
+make_status_True.short_description = _("Make the product active.")
 
 class CommentProductInline(admin.TabularInline):
     model = Comment
@@ -19,6 +30,8 @@ class ProductAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
     list_filter = ['is_active']
 
     ordering = ['is_active', 'name']
+    
+    actions = [make_active_True]
     
     inlines = [
         CommentProductInline,
@@ -45,6 +58,8 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['title', 'slug']
     
     ordering = ['position']
+    
+    actions = [make_status_True]
     
     prepopulated_fields = {'slug':['title']}
 

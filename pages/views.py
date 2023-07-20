@@ -8,8 +8,3 @@ class HomePageView(generic.ListView):
     model = Product 
     context_object_name = 'products'
 
-
-class ProfilePageView(generic.TemplateView):
-    template_name = 'pages/profile.html'
-
-

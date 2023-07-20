@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    "phonenumber_field",
     'django.contrib.humanize',
+
     
     # Third party apps
 	'jalali_date',
@@ -65,6 +67,7 @@ INSTALLED_APPS = [
     'order.apps.OrderConfig',
     'contact.apps.ContactConfig',
     'payment.apps.PaymentConfig',
+    'user_profile.apps.UserProfileConfig',
 ]
 
 SITE_ID = 1
@@ -198,14 +201,14 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# for send a confirmation from our email to user email
+# # for send a confirmation from our email to user email
 
-EMAIL_PACKED = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "roozbehsarcheshme@gmail.com"
-EMAIL_HOST_PASSWORD = "roozbehbadali1381"
+# EMAIL_PACKED = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = "smtp.gmail.com"
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = "roozbehsarcheshme@gmail.com"
+# EMAIL_HOST_PASSWORD = "roozbehbadali1381"
 
 # crispy forms for config
 
@@ -231,7 +234,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # ۱ day
 
-ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 1
 
 # For messages framework 
 
@@ -241,3 +244,4 @@ MESSAGE_TAGS = {
 
 # ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_PAYMENT_ID")
 
+PHONENUMBER_DEFAULT_REGION = 'IR'

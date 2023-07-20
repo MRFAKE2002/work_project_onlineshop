@@ -1,0 +1,57 @@
+{% extends "_base.html" %}
+
+<!-- Django tags -->
+{% load i18n %}
+{% load static %}
+{% load humanize %}
+
+<!-- My tags -->
+{% load persian_translation_tags %}
+
+<!-- Third party tags -->
+{% load jalali_tags %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+
+    {% trans "User Profile" %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-12 mb-0">
+        <!-- general form elements -->
+        <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title mb-0 float-left">{% trans "profile"%}</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post" ><!-- enctype="multipart/form-data" -->
+                {% csrf_token %}
+                <div class="form-row mb-5">
+                    <div class="form-group col-md-6 ">
+                    {{ form.username|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        {{ form.email|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        {{ form.first_name|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        {{ form.last_name|as_crispy_field }}
+                    </div> 
+                    <div class="form-group col-md-6 ">
+                        {{ form.phone_number|as_crispy_field }}
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        {{ form.city|as_crispy_field }}
+                    </div>
+                </div>
+                <button type="Submit" class="btn btn-success">{% trans "Submit" %}</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "accounts/admin.html" %}
+
+<!-- Django tags -->
+{% load i18n %}
+{% load static %}
+{% load humanize %}
+
+<!-- My tags -->
+{% load persian_translation_tags %}
+
+<!-- Third party tags -->
+{% load jalali_tags %}
+
+{% block title %}
+
+    {% trans "product list "%}
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+            <h3 class="card-title">Responsive Hover Table</h3>
+
+            <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                </div>
+                </div>
+            </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>{% trans "image" %}</th>
+                    <th>{% trans "name" %}</th>
+                    <th>{% trans "category" %}</th>
+                    <th>{% trans "description" %}</th>
+                    <th>{% trans "price" %}</th>
+                    <th>{% trans "published" %}</th>
+                    <th>{% trans "is_active" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td><img src="{{ product.image.url}}" width="50"></td>
+                            <td><a href="{% url "accounts:product_updated" product.slug %}"> {{ product.name }}</a></td>
+                            <td>{{ product.categories_to_string }}</td>
+                            <td>{{ product.description|safe|truncatewords:5 }}</td>
+                            <td>{{ product.price|intcomma:False|persian_numbers }}</td>
+                            <td>{{ product.published|to_jalali:'%Y/%m/%d'|persian_numbers }}</td>
+                            {% if product.is_active == True %}
+                                <td>
+                                    <span class="badge badge-success">{% trans "published" %}</span>
+                                    <a target="_blank" class="badge badge-primary" href="{% url "product:product_details" product.slug %}">
+                                        {% trans "Watch this product" %}
+                                    </a>
+                                    <a target="_blank" class="badge badge-danger" href="{% url "accounts:product_deleted" product.slug %}">
+                                        {% trans "Delete this product" %}
+                                    </a>
+                                </td>
+                            {% else %}
+                                <span class="badge badge-danger">{% trans "draft" %}</span>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+        </div>
+    </div>
+
+{% endblock %}
