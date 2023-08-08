@@ -1,10 +1,15 @@
 from django import forms
 
-from .models import Comment
+from .models import Comment, Product
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ['text', 'stars']
+        fields = ['text']
         
-    
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['colors', 'sizes', ]
+

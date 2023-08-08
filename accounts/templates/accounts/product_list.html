@@ -7,6 +7,7 @@
 
 <!-- My tags -->
 {% load persian_translation_tags %}
+{% load product_tags %}
 
 <!-- Third party tags -->
 {% load jalali_tags %}
@@ -47,13 +48,14 @@
                     <th>{% trans "price" %}</th>
                     <th>{% trans "published" %}</th>
                     <th>{% trans "is_active" %}</th>
+                    <th>{% trans "visit" %}</th>
                 </tr>
                 </thead>
                 <tbody>
                     {% for product in products %}
                         <tr>
                             <td><img src="{{ product.image.url}}" width="50"></td>
-                            <td><a href="{% url "accounts:product_updated" product.slug %}"> {{ product.name }}</a></td>
+                            <td><a href="{% url "accounts:product_updated" product.slug %}"> {{ product.name|popular_products }}</a></td>
                             <td>{{ product.categories_to_string }}</td>
                             <td>{{ product.description|safe|truncatewords:5 }}</td>
                             <td>{{ product.price|intcomma:False|persian_numbers }}</td>
@@ -71,6 +73,7 @@
                             {% else %}
                                 <span class="badge badge-danger">{% trans "draft" %}</span>
                             {% endif %}
+                            <td>{{ product.visit.count|intcomma:False|persian_numbers }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

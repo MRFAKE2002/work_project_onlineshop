@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django.contrib.sites',
+    
     
     "phonenumber_field",
     'django.contrib.humanize',
@@ -57,6 +59,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rosetta',
     'ckeditor',
+    'django_gravatar',
+    'star_ratings',
 
     # My apps 
     'accounts.apps.AccountsConfig',
@@ -68,6 +72,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'payment.apps.PaymentConfig',
     'user_profile.apps.UserProfileConfig',
+    'visits.apps.VisitsConfig',
 ]
 
 SITE_ID = 1
@@ -88,6 +93,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'visits.middleware.SaveIpAddressMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -197,9 +203,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-# for send a confirmation to console
+# # for send a confirmation to console
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # # for send a confirmation from our email to user email
 
@@ -207,8 +213,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST = "smtp.gmail.com"
 # EMAIL_USE_TLS = True
 # EMAIL_PORT = 587
-# EMAIL_HOST_USER = "roozbehsarcheshme@gmail.com"
-# EMAIL_HOST_PASSWORD = "roozbehbadali1381"
+# EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 
 # crispy forms for config
 
@@ -228,9 +234,11 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username'
 
 ACCOUNT_USERNAME_REQUIRED = True
 
-ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_EMAIL_REQUIRED = True
 
 ACCOUNT_UNIQUE_EMAIL = True
+
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 # ۱ day
 
@@ -245,3 +253,6 @@ MESSAGE_TAGS = {
 # ZARINPAL_MERCHANT_ID = env("DJANGO_ZARINPAL_PAYMENT_ID")
 
 PHONENUMBER_DEFAULT_REGION = 'IR'
+
+# StarPackage settings
+STAR_RATINGS_STAR_HEIGHT = 16

@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from ckeditor.fields import RichTextField
 
+from visits.models import IPAddress
 
 class CategoryManager(models.Manager):
     def active(self):
@@ -40,6 +41,37 @@ class ProductManager(models.Manager):
     def published(self):
         return self.filter(is_active=True).order_by('published')
 
+ 
+class Color(models.Model):
+    name = models.CharField(_('color name'), max_length=200 )
+    
+    hex_code = models.CharField(_('color hex code'), max_length=6)
+    
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = _('Color')
+        verbose_name_plural = _('Colors')
+        ordering = ('name',)
+    
+    def __str__(self):
+        return self.name
+
+ 
+class Size(models.Model):
+    size_number = models.CharField(_('size number'), max_length=200 )
+    
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = _('Size')
+        verbose_name_plural = _('Sizes')
+        ordering = ('size_number',)
+    
+    def __str__(self):
+        return self.size_number
+  
+ 
 
 class Product(models.Model):
     
@@ -54,6 +86,10 @@ class Product(models.Model):
     price = models.PositiveIntegerField(_('product price'), default=0)
     
     image = models.ImageField(_('product image'), upload_to='products/product_image/')
+    
+    colors = models.ManyToManyField(Color, verbose_name=_('colors'), related_name="products")
+    
+    sizes = models.ManyToManyField(Size, verbose_name=_('sizes'), related_name="products")
 
     published = models.DateTimeField(_('published'), default=timezone.now())
     
@@ -62,6 +98,8 @@ class Product(models.Model):
     datetime_modified = models.DateTimeField(_('datetime_modified'), auto_now=True)
     
     is_active = models.BooleanField(_('is_active'), default=True)
+    
+    visit = models.ManyToManyField(IPAddress, through="ProductVisits", blank=True, related_name='visit', verbose_name=_('visit'))
 
     class Meta:
         db_table = ''
@@ -90,9 +128,33 @@ class Product(models.Model):
         return " , ".join([category.title for category in self.category.active()])
     categories_to_string.short_description = _('Categories')
 
+
+    def colors_to_string(self):
+        """
+        We use the following function to convert a list of categories to a string.
+        """
+        return " , ".join([color.name for color in self.colors.all()])
+    colors_to_string.short_description = _('colors')
+
+
+    def sizes_to_string(self):
+        """
+        We use the following function to convert a list of categories to a string.
+        """
+        return " , ".join([color.size_number for color in self.sizes.all()])
+    sizes_to_string.short_description = _('sizes')
+
     objects = ProductManager()
     
 
+
+class ProductVisits(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    
+    ip_address = models.ForeignKey(IPAddress, on_delete=models.CASCADE)
+    
+    datetime_created = models.DateTimeField(_('datetime_created'), auto_now_add=True)
+   
 
 class CommentManager(models.Manager):
     def active(self):

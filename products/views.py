@@ -81,9 +81,15 @@ class ProductListView(generic.ListView):
 class ProductDetailsView(generic.DetailView):
     def get_object(self):
         slug = self.kwargs.get('slug')
-        return get_object_or_404(Product.objects.published(), slug=slug)
     
-    # model = Product
+        product = get_object_or_404(Product.objects.published(), slug=slug)
+    
+        ip_address = self.request.user.ip_address
+        if ip_address not in product.visit.all():
+            product.visit.add(ip_address)
+        
+        return product
+    
     template_name = 'products/product_details.html'
     
     def get_context_data(self, **kwargs):

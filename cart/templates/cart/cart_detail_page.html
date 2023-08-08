@@ -39,6 +39,8 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>{% trans "Products"%}</th>
+                            <th>{% trans "Colors"%}</th>
+                            <th>{% trans "Sizes"%}</th>
                             <th>{% trans "Price"%}</th>
                             <th>{% trans "Quantity"%}</th>
                             <th>{% trans "Total"%}</th>
@@ -49,6 +51,8 @@
                         {% for product in cart %}
                             <tr>
                                 <td class="align-middle"><img src="{{ product.product_info.image.url }}" alt="" style="width: 50px;">{{ product.product_info.name }}</td>
+                                <td class="align-middle">{{ product.product_info.colors_to_string }}</td>
+                                <td class="align-middle">{{ product.product_info.sizes_to_string }}</td>
                                 <td class="align-middle">{% trans "$" %}{{ product.product_info.price|intcomma:False|persian_numbers }}</td>
                                 <td class="align-middle">
                                     <form method="POST" action="{% url 'cart:add_product_to_cart' product.product_info.id %}">

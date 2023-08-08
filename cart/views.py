@@ -16,7 +16,7 @@ def cart_details_page_view(request):
     for product in cart:
         product['product_inplace_current_quantity'] = AddProductToCartForm(initial={
             'quantity' : product['quantity'],
-            'inplace' : True
+            'inplace' : True,
         })
     
     return render(request, 'cart/cart_detail_page.html', {'cart' : cart})
@@ -32,11 +32,15 @@ def add_product_to_cart(request, product_id):
     if form.is_valid():
         cleaned_data = form.cleaned_data
         
+        color = cleaned_data['color']
+        
+        size = cleaned_data['size']
+        
         quantity = int(cleaned_data['quantity'])
         
         replace_current_price = cleaned_data['inplace']
         
-        cart.add(product, quantity, replace_current_price)
+        cart.add(product, color, size, quantity, replace_current_price)
         
     return redirect("cart:cart_details_page")
 

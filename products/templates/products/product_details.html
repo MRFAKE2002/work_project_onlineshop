@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load ratings %}
 
 <!-- Django tags -->
 {% load i18n %}
@@ -56,69 +57,27 @@
         <div class="col-lg-7 h-auto mb-30">
             <div class="h-100 bg-light p-30">
                 <h3>{{ product.name }}</h3>
-                <div class="d-flex mb-3">
-                    <div class="text-primary mr-2">
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star"></small>
-                        <small class="fas fa-star-half-alt"></small>
-                        <small class="far fa-star"></small>
-                    </div>
-                    <small class="pt-1">({{ product.comments.all|length|persian_numbers }} {% trans "Reviews"%})</small>
-                </div>
                 <h3 class="font-weight-semi-bold mb-4">{% trans "$"%}{{ product.price|intcomma:False|persian_numbers }}</hh3>
+                <form method="POST" action="{% url 'cart:add_product_to_cart' product.id %}">
+                {% csrf_token %}
                 <div class="d-flex mb-3">
                     <strong class="text-dark mr-3">{% trans "Sizes:"%}</strong>
-                    <form>
+                    {% for size in product.sizes.all %}
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">XS</label>
+                            <label class="custom-control-label" for="size-1">{{ size.size_number }}</label>
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">S</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-4" name="size">
-                            <label class="custom-control-label" for="size-4">L</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-5" name="size">
-                            <label class="custom-control-label" for="size-5">XL</label>
-                        </div>
-                    </form>
+                    {% endfor %}
                 </div>
                 <div class="d-flex mb-4">
                     <strong class="text-dark mr-3">{% trans "Colors:"%}</strong>
-                    <form>
+                    {% for color in product.colors.all %}
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-1" name="color">
-                            <label class="custom-control-label" for="color-1">{% trans "Black"%}</label>
+                            <input type="radio" class="custom-control-input" id="colors" name="colors">
+                            <label class="custom-control-label" for="colors">{{ color.name }}</label>
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-2" name="color">
-                            <label class="custom-control-label" for="color-2">{% trans "White"%}</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-3" name="color">
-                            <label class="custom-control-label" for="color-3">{% trans "Red"%}</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-4" name="color">
-                            <label class="custom-control-label" for="color-4">{% trans "Blue"%}</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-5" name="color">
-                            <label class="custom-control-label" for="color-5">{% trans "Green"%}</label>
-                        </div>
-                    </form>
+                    {% endfor %}
                 </div>
-                <form method="POST" action="{% url 'cart:add_product_to_cart' product.id %}">
-                    {% csrf_token %}
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group number mr-3" style="width: 130px;">
                             <div class="input-group-btn">
@@ -270,13 +229,7 @@
                                                 {% comment %} <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;"> {% endcomment %}
                                                 <div class="media-body">
                                                     <h6>{{ comment.user }}<small> - <i>{{ comment.datetime_created|to_jalali:'%Y/%m/%d'|persian_numbers }}</i></small></h6>
-                                                    <div class="text-primary mb-2">
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star"></i>
-                                                        <i class="fas fa-star-half-alt"></i>
-                                                        <i class="far fa-star"></i>
-                                                    </div>
+                                                    {% ratings product %}
                                                     <p>
                                                         {{ comment.text }}
                                                     </p>

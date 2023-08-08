@@ -23,7 +23,7 @@ class Cart:
             
         self.cart = cart
       
-    def add(self, product, quantity=1, replace_current_price=True):
+    def add(self, product, color, size, quantity=1, replace_current_price=True):
         """
         Add specified product to cart.
         """
@@ -37,6 +37,10 @@ class Cart:
             self.cart[product_id]['quantity'] = quantity
         else:
             self.cart[product_id]['quantity'] += quantity
+            
+        self.cart[product_id]['color'] = color
+        
+        self.cart[product_id]['size'] = size
 
         messages.success(self.request, _('Product successfully added to cart'))
 

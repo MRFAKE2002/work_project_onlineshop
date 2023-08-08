@@ -30,6 +30,7 @@ urlpatterns = [
     path('order/', include('order.urls', namespace='order')),
     path('payment/', include('payment.urls', namespace='payment')),
     path('profile/', include('user_profile.urls', namespace='profile')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
     
     # Rosetta
     path('rosetta/', include('rosetta.urls')),
