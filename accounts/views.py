@@ -1,5 +1,7 @@
 from django.views import generic 
 from django.urls import reverse_lazy 
+from django.db.models import Count, Q
+from datetime import datetime, timedelta
 
 from products.models import Product
 from .mixin import SuperUserRequiredMixin
@@ -9,7 +11,9 @@ class HomeAdminView(SuperUserRequiredMixin, generic.TemplateView):
 
  
 class ProductListAdminView(SuperUserRequiredMixin, generic.ListView):
-    queryset = Product.objects.published()
+    last_month = datetime.today() - timedelta(days=30)
+    
+    queryset = Product.objects.published().annotate(count=Count('visit', filter=Q(productvisits__datetime_created__gt=last_month))).order_by('-count', '-published')
     
     template_name = 'accounts/product_list.html'
     

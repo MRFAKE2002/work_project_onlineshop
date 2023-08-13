@@ -52,10 +52,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                    {% for product in products %}
+                    {% for product in products  %}
                         <tr>
                             <td><img src="{{ product.image.url}}" width="50"></td>
-                            <td><a href="{% url "accounts:product_updated" product.slug %}"> {{ product.name|popular_products }}</a></td>
+                            <td><a href="{% url "accounts:product_updated" product.slug %}"> {{ product.name }}</a></td>
                             <td>{{ product.categories_to_string }}</td>
                             <td>{{ product.description|safe|truncatewords:5 }}</td>
                             <td>{{ product.price|intcomma:False|persian_numbers }}</td>

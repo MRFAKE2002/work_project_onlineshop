@@ -28,6 +28,9 @@
 </div>
 <!-- Breadcrumb End -->
 
+{% block header %}
+
+{% endblock %}
 
 <!-- Shop Start -->
 <div class="container-fluid">
@@ -208,6 +211,8 @@
                             </div>
                         </div>
                     </div>
+                {% empty %}
+                    {% trans "There is nothing about your search results."%}
                 {% endfor %}
                 <div class="col-12">
                     <nav>

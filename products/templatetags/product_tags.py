@@ -8,7 +8,7 @@ from ..models import Product
 register = template.Library()
 
 @register.filter
-def popular_products():
+def popular_products(self):
     last_month = datetime.today() - timedelta(days=30)
     
     return {

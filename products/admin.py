@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Product, Comment, Category, Color, Size
+from .models import Product, Comment, Category, Color, Size, ProductSizeColor
 from jalali_date.admin import ModelAdminJalaliMixin
 from django.utils.translation import gettext_lazy as _
 
@@ -23,7 +23,7 @@ class CommentProductInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
-    list_display = ['name', 'slug', 'categories_to_string', 'price', 'is_active', 'colors_to_string',]
+    list_display = ['name', 'slug', 'categories_to_string', 'price', 'is_active', 'colors_to_string', ]
 
     search_fields = ['name', 'slug']
     
@@ -63,6 +63,16 @@ class CategoryAdmin(admin.ModelAdmin):
     
     prepopulated_fields = {'slug':['title']}
 
+
+@admin.register(ProductSizeColor)
+class ProductSizeColorAdmin(admin.ModelAdmin):
+    list_display = ['product', 'size', 'color']
+        
+    search_fields = ['product', 'color']
+    
+    ordering = ['product']
+        
+        
 
 @admin.register(Color)
 class ColorAdmin(admin.ModelAdmin):

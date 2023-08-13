@@ -128,10 +128,18 @@ class Product(models.Model):
         return " , ".join([category.title for category in self.category.active()])
     categories_to_string.short_description = _('Categories')
 
+        
+    # def visits_to_string(self):
+    #     """
+    #     We use the following function to convert a list of visits to a string.
+    #     """
+    #     return " , ".join([number_of_visit for number_of_visit in len(self.visit)])
+    # visits_to_string.short_description = _('visit')
+
 
     def colors_to_string(self):
         """
-        We use the following function to convert a list of categories to a string.
+        We use the following function to convert a list of colors to a string.
         """
         return " , ".join([color.name for color in self.colors.all()])
     colors_to_string.short_description = _('colors')
@@ -139,13 +147,35 @@ class Product(models.Model):
 
     def sizes_to_string(self):
         """
-        We use the following function to convert a list of categories to a string.
+        We use the following function to convert a list of sizes to a string.
         """
         return " , ".join([color.size_number for color in self.sizes.all()])
     sizes_to_string.short_description = _('sizes')
 
     objects = ProductManager()
     
+
+
+class ProductSizeColor(models.Model):
+    COLOR_CHOICES=[
+        ('قرمز', _('red')),
+        ('آبی', _('blue')),
+        ('مشکی', _('black')),
+        ('طوسی', _('gray')),
+        ('سبز', _('green')),
+    ]    
+    
+    SIZE_CHOICES=[
+        ('بزرگ', _('big')),
+        ('متوسط', _('normal')),
+        ('کوچیک', _('small')),
+    ]
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_size_color', verbose_name='product_size_color')
+    
+    color = models.CharField(_('color'), max_length=250, choices = COLOR_CHOICES)
+    
+    size = models.CharField(_('size'), max_length=100, choices = SIZE_CHOICES)
+
 
 
 class ProductVisits(models.Model):

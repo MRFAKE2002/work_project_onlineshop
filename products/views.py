@@ -1,8 +1,11 @@
+from typing import Any
 from django.core.paginator import Paginator
+from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.contrib import messages
 from django.utils.translation import gettext as _
+from django.db.models import Q
 
 from .forms import CommentForm
 from .models import Product, Comment, Category
@@ -130,3 +133,34 @@ class CommentCreateView(generic.CreateView):
     
 
 # --------------------------------------------------------------------------------------- #
+
+# Create Your ProductSearchListView By classbased.
+class ProductSearchListView(generic.ListView):
+    paginate_by = 2
+    template_name = 'products/search_list.html'
+    def get_queryset(self):
+        search = self.request.GET.get('q')
+        return Product.objects.filter(Q(description__icontains=search) | Q(name__icontains=search))
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        search = self.request.GET.get('q')
+        
+        context['search'] = search
+        
+        context['products'] = Product.objects.filter(Q(description__icontains=search) | Q(name__icontains=search))
+        
+        return context
+
+
+
+# # Create Your search_product_list By functional.
+# def search_post(request):
+#     if request.method == 'POST':
+#         search_query = request.POST['search_query']
+#         products = Product.objects.filter(Q(name__icontains=search_query) | Q(description__icontains=search_query))
+#         return render(request, 'app/template_name.html', {'query':search_query, 'products':products})
+#     else:
+#         return render(request, 'app/template_name.html',{})
+
