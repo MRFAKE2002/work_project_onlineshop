@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.shortcuts import reverse
+from django.urls import reverse
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
@@ -8,10 +8,15 @@ from ckeditor.fields import RichTextField
 
 from visits.models import IPAddress
 
+
+##############################################################################################################
+
 class CategoryManager(models.Manager):
     def active(self):
         return self.filter(status=True)
 
+
+#--------------------------------------------------------------------------------------------------------#
 
 class Category(models.Model):
     parent = models.ForeignKey('self', default=None, null=True, blank=True, related_name="children", verbose_name=_('category_parent'), on_delete=models.SET_NULL)
@@ -37,11 +42,8 @@ class Category(models.Model):
     objects = CategoryManager()
 
 
-class ProductManager(models.Manager):
-    def published(self):
-        return self.filter(is_active=True).order_by('published')
+##############################################################################################################
 
- 
 class Color(models.Model):
     name = models.CharField(_('color name'), max_length=200 )
     
@@ -72,6 +74,14 @@ class Size(models.Model):
         return self.size_number
   
  
+##############################################################################################################
+
+class ProductManager(models.Manager):
+    def published(self):
+        return self.filter(is_active=True).order_by('published')
+
+
+#--------------------------------------------------------------------------------------------------------# 
 
 class Product(models.Model):
     
@@ -155,6 +165,7 @@ class Product(models.Model):
     objects = ProductManager()
     
 
+##############################################################################################################
 
 class ProductSizeColor(models.Model):
     COLOR_CHOICES=[
@@ -177,6 +188,7 @@ class ProductSizeColor(models.Model):
     size = models.CharField(_('size'), max_length=100, choices = SIZE_CHOICES)
 
 
+##############################################################################################################
 
 class ProductVisits(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -184,12 +196,15 @@ class ProductVisits(models.Model):
     ip_address = models.ForeignKey(IPAddress, on_delete=models.CASCADE)
     
     datetime_created = models.DateTimeField(_('datetime_created'), auto_now_add=True)
-   
+
+
+##############################################################################################################
 
 class CommentManager(models.Manager):
     def active(self):
         return self.filter(active=True).order_by('datetime_created')
 
+#--------------------------------------------------------------------------------------------------------#
     
 class Comment(models.Model):
     STARS_CHOICES=[
